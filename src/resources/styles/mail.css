@@ -1,0 +1,35 @@
+label {
+  font-weight: bold;
+}
+
+body {
+  font-family: ProximaNova, "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 16px;
+}
+.background .email {
+  width: 40%;
+  margin: 0 auto;
+  background-color: #fff;
+  height: 600px;
+}
+.background {
+  background-color: #f8f8f8;
+  height: 700px;
+  padding-top: 50px;
+}
+.email-text {
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-top: 40px;
+}
+hr {
+  color: #ccc;
+  margin: 10px 0;
+  border-top: 1px solid #ccc;
+}
+.background .email-text .header {
+  margin-bottom: 40px;
+}
+.email-text .text-div {
+  margin-bottom: 40px;
+}

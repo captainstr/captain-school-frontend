@@ -1,0 +1,288 @@
+div.ctools-modal-content .modal-header {
+  background-color: green;
+  padding: 0 0.25em 0 1em;
+  height: 40px;
+  text-align: center;
+}
+#modalContent {
+  border-style: solid;
+  border-width: 8px;
+  border-color: black;
+  border-width: 20;
+  z-index: 1001;
+  position: absolute;
+  top: 90px;
+  left: 74px;
+  display: block;
+}
+div.ctools-modal-content {
+  background: #fff;
+  color: #000;
+  padding: 0;
+  margin: 0px;
+  border: 1px solid #000;
+  width: 600px;
+  text-align: left;
+}
+#modal-content h2 {
+  display: none;
+}
+
+.popup-style-white .popup-element-body table.popup-layout,
+#cboxWrapper {
+  border-style: solid;
+  border-color: blue;
+  border-width: 10px;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.popup-element-body table.popup-layout * {
+  border: none;
+}
+.inner {
+  width: 65vw !important;
+}
+user agent stylesheet div {
+  display: block;
+}
+#edit-field-first-name-und-0-value {
+}
+.entitytype-contact_form_type-form .field-name-field-first-name {
+  width: 25%;
+}
+
+#modal-content {
+  height: 750px !important;
+}
+.ctools-modal-content {
+  height: 620px !important;
+}
+.entitytype-contact_form_type-form .field-name-field-first-name,
+.entitytype-contact_form_type-form .field-name-field-last-name,
+.entitytype-contact_form_type-form .field-name-field-last-name,
+.entitytype-contact_form_type-form .field-type-email,
+.entitytype-contact_form_type-form .field-type-telephone {
+  width: 50%;
+  display: inline-block;
+}
+
+/*Make captcha size smaller*/
+
+#edit-captcha-response {
+  width: 10%;
+}
+
+div.ctools-modal-content .resizable-textarea {
+  margin-left: 0%;
+}
+#header-menu ul.menu li a,
+.nolink {
+  font-size: 14px !important;
+}
+textarea {
+  height: 100px;
+}
+.field-name-field-payment {
+  display: none;
+}
+#cboxContent {
+  background-color: #fff;
+}
+#cboxWrapper .popup-onload-popup-onload-basic {
+  padding: 2em;
+}
+#cboxClose {
+  display: none;
+}
+.form-type-creditfield-date {
+  width: auto;
+}
+.form-type-creditfield-date,
+.form-type-creditfield-cardnumber {
+  display: inline-block;
+}
+.form-type-creditfield-cvv input.form-text,
+.form-type-creditfield-cardnumber input.form-text {
+  width: auto;
+}
+.views-field-field-cost .field-content,
+.views-field-field-deposit .field-content {
+  display: inline;
+}
+.form-item-field-phone-und-0-value {
+  width: 50%;
+}
+
+#modalContent {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+#modal-content {
+  overflow: hidden;
+}
+div.ctools-modal-content {
+  border: none;
+}
+input[type="submit"].form-disabled,
+input[type="submit"].form-button-disabled {
+  background: darkgray !important;
+}
+.form-item-authaccept {
+  text-align: center;
+}
+#block-threeb-mod-braintree-token {
+  display: none;
+}
+.braintree-field {
+  background: #e8e8e8;
+  border: 1px solid #f2f2f2;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Segoe UI, Helvetica,
+    Arial, sans-serif;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  width: 80%;
+  color: #5f6a5f;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 2px 3px #bcbcbc inset;
+  -moz-box-shadow: 0px 2px 3px #bcbcbc inset;
+  box-shadow: 0px 2px 3px #bcbcbc inset;
+}
+#card-number,
+#expiration-date {
+  display: inline-block;
+}
+#card-number {
+  width: 20%;
+  min-width: 200px;
+}
+#cvv {
+  width: 5%;
+  min-width: 50px;
+}
+#expiration-date {
+  min-width: 50px;
+  width: 5%;
+  margin-left: 5%;
+}
+.form-item-field-address-und-0-country {
+  display: none;
+}
+.field-name-field-braintree img {
+  height: 66px !important;
+  width: 420px !important;
+}
+.form-item-authaccept {
+  font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .field-name-field-depositcheck,
+  .view-id-price_data {
+    /*position: absolute;*/
+  }
+}
+.field-name-field-depositcheck,
+.view-id-price_data {
+  right: 0rem;
+  text-align: left;
+  width: 10rem;
+}
+.field-name-field-required {
+  font-size: 1.5rem;
+  color: red;
+}
+.view-id-price_data,
+.field-name-field-depositcheck {
+  font-size: 0.85rem;
+}
+#edit-field-flag {
+  display: none;
+}
+#block-block-6 {
+  margin: 0 auto;
+  z-index: 999;
+  width: 105px;
+  background-color: lightblue;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  height: 32px;
+  vertical-align: middle;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#block-block-6 > div {
+  display: inline-block;
+  width: 105px;
+}
+.sm-ic {
+  display: inline-block;
+  height: 32px;
+  background-color: #fff;
+}
+.covid-link {
+  color: #fff !important;
+  display: block;
+  width: 150px;
+  height: 50px;
+  background: #4e9caf;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white !important;
+  font-weight: bold;
+  color: #fefefe;
+  text-shadow: 0 1px 1px #003547;
+  background: #0093c5;
+  background-image: -ms-linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  background-image: -moz-linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  background-image: -o-linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #0093c5),
+    color-stop(1, #0079a2)
+  );
+  background-image: -webkit-linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  background-image: linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0093c5', endColorstr='#0079a2');
+  -webkit-box-shadow: 0px 1px 2px #939da2;
+  -moz-box-shadow: 0px 1px 2px #939da2;
+  box-shadow: 0px 1px 2px #939da2;
+  display: inline-block;
+}
+.covid-link a {
+  color: #fff !important;
+}
+#block-block-6 {
+  z-index: 1 !important;
+}
+.alternate_registration {
+  display: none;
+}
+.form-item-authaccept {
+  text-align: left;
+  margin-bottom: 10px !important;
+}
+.form-item-field-processed-und {
+  display: none;
+}
+.field-name-field-depositcheck {
+  display: inline-block;
+}
+
+.view-price-data {
+  display: inline-block;
+  vertical-align: top;
+}
+.field-name-field-depositcheck > .form-item-field-depositcheck-und > label {
+  display: none;
+}

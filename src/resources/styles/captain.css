@@ -1,0 +1,290 @@
+#top-image {
+  /*height: 400px;*/
+  width: 100%;
+  /*object-fit: cover;
+      object-position: 0px -200px;*/
+}
+.region-navigation h2 {
+  display: none;
+}
+.region-footer p {
+  color: #e4e4e4;
+}
+.region-footer p a {
+  font-weight: bold;
+}
+#footer-bottom-left .secondary-menu {
+  display: none;
+}
+.view-navs img {
+  width: 100%;
+  height: 220px;
+}
+#slogan {
+  display: block;
+}
+.grid_12 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#header-menu ul.menu {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.chosen-search input {
+  background: #e8e8e8;
+  border: 1px solid #f2f2f2;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Segoe UI, Helvetica,
+    Arial, sans-serif;
+  height: 25px;
+  line-height: 25px;
+  margin: 0 0 10px 0;
+  padding: 5px;
+  width: 80%;
+  color: #5f6a5f;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /* shadow */
+  -webkit-box-shadow: 0px 2px 3px #bcbcbc inset;
+  -moz-box-shadow: 0px 2px 3px #bcbcbc inset;
+  box-shadow: 0px 2px 3px #bcbcbc inset;
+}
+
+.issues-link,
+.feed-icon {
+  display: none;
+}
+
+.view-navs .row-2 .col-2:hover {
+  -webkit-filter: invert(100%) !important;
+  background-color: #fff;
+}
+
+#registration-form .form-item-count,
+#registration-form .form-item-state {
+  display: none;
+}
+.calendar-calendar .has-events {
+  background-color: #77dd77;
+}
+#content-inside {
+  padding: 0px 0 60px;
+}
+.view-class-schedule .view-content .pager,
+.view-class-schedule .view-footer .pager {
+  display: none;
+}
+.views-slideshow-cycle-main-frame {
+  width: 250px !important;
+}
+#header-menu ul.menu li a,
+.nolink {
+  font-size: 16px;
+}
+#header-menu ul.menu li a:hover,
+#header-menu ul.menu li ul.menu li a:hover,
+#header-menu ul.menu li.expanded ul.menu li.leaf a:hover {
+  background-color: #fff;
+}
+#header-menu ul.menu {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#header-menu ul.menu li.last a {
+  padding-right: 5px;
+}
+#header-menu ul.menu li.first a {
+  padding-left: 5px;
+}
+.nolink {
+  outline: none;
+  text-decoration: none;
+  margin: 0 25px 0 0;
+  padding: 10px 5px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Myriad Pro, "Lucida Grande", "Lucida Sans Unicode", Segoe UI,
+    Helvetica, Arial, sans-serif;
+  display: block;
+  color: #fff;
+}
+.nolink:hover {
+  background-color: #fff;
+  color: #1487d4;
+}
+#header-menu ul.menu li.expanded ul.menu li a {
+  border: none;
+}
+.clearfix:after,
+.clearfix:before {
+  content: none;
+}
+#registration-form .field-name-field-first-name,
+#registration-form .field-name-field-last-name {
+  width: 50%;
+  display: inline-block;
+}
+#registration-form .form-item-field-address-und-0-thoroughfare,
+#registration-form .form-item-field-address-und-0-premise {
+  width: 49%;
+  display: inline-block;
+}
+#registration-form .form-item {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.page-node-register .breadcrumb {
+  display: none;
+}
+.expanded ul li {
+  background-image: linear-gradient(black, gray);
+}
+.content {
+  line-height: 1.5;
+}
+.popup-element-origin {
+  top: 100px !important;
+  /*left: 187.5px !important;
+      right: 187.5px !important;*/
+}
+.inner {
+  width: 50vw !important;
+}
+.inner a,
+.inner p {
+  display: block;
+}
+.popup-style-white .popup-element-body .top,
+.popup-style-white .popup-element-body .bottom {
+  display: none !important;
+}
+.popup-style-white .popup-element-body .center {
+  background-color: #fff;
+}
+.popup-style-white .popup-element-body div.inner {
+  margin: 20px 15px !important;
+}
+.popup-style-white .popup-element-body a.popup-close-button {
+  background: url(https://codexr.io/clients/3bs/sites/all/modules/ctools/images/icon-close-window.png)
+    left top;
+  display: block;
+  height: 15px !important;
+  position: absolute;
+  top: -6px;
+  right: -11px;
+  width: 15px !important;
+}
+.popup-style-white .popup-element-body a.popup-close-button:active {
+  background-position: left 15px;
+}
+.register-link a,
+.close-link a,
+.register-link .alt-reg {
+  display: block;
+  width: 115px;
+  height: 25px;
+  background: #4e9caf;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white !important;
+  font-weight: bold;
+  color: #fefefe;
+  text-shadow: 0 1px 1px #003547;
+  background: #0093c5;
+  background-image: -ms-linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  background-image: -moz-linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  background-image: -o-linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, #0093c5),
+    color-stop(1, #0079a2)
+  );
+  background-image: -webkit-linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  background-image: linear-gradient(top, #0093c5 0%, #0079a2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0093c5', endColorstr='#0079a2');
+  -webkit-box-shadow: 0px 1px 2px #939da2;
+  -moz-box-shadow: 0px 1px 2px #939da2;
+  box-shadow: 0px 1px 2px #939da2;
+  display: inline-block;
+}
+
+.register-link .alt-reg {
+  background: darkgray;
+}
+.popup-element-title {
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  padding-right: 12px;
+  position: relative;
+}
+.google-location {
+  float: right;
+}
+.modal-content h2 a {
+  text-decoration: none;
+  pointer-events: none;
+}
+.modal-content h2 a:hover {
+  cursor: pointer;
+}
+.tabs {
+  display: none;
+}
+.popup-layout {
+  color: #0000cd;
+  font-size: 16px;
+}
+.popup-style-white .popup-element-body div.inner {
+  color: #0000cd;
+  font-weight: bold;
+}
+.page-node-1326 #header-menu,
+.page-node-register #header-menu,
+.page-node-1353 #header-menu,
+.node-type-bio #header-menu {
+  display: none;
+}
+table td,
+table th {
+  border: none;
+}
+.menu-name-main-menu > ul {
+  width: 100%;
+  display: table;
+  text-align: center;
+}
+#header-menu .menu-name-main-menu > ul.menu li {
+  float: none !important;
+}
+#header-menu ul.menu li.expanded:hover {
+  display: inline-block;
+}
+
+/*from 960*/
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4,
+.grid_5,
+.grid_6,
+.grid_7,
+.grid_8,
+.grid_9,
+.grid_10,
+.grid_11,
+.grid_12 {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#header-menu-inside > div {
+  background: #222222;
+}
