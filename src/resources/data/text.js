@@ -250,3 +250,51 @@ export const onlineText = [
 
 export const classesTitle = "Class Schedule - ";
 export const classesSubTitle = "ALL CLASSES SUBJECT TO COVID-19 RESTRICTIONS";
+
+// Emails
+
+// Payment arrangement
+
+/*                    "to" : "[registration:anon-mail]",
+                    "cc" : "captaind@capquest.com",
+                    "bcc" : "captaind@capquest.com, rossfowle@gmail.com",*/
+
+export const paymentArrangementSubject =
+  "Payment arrangement for 3Bs Captains School";
+export const paymentArrangementBodyHTML =
+  "You have elected to make payment arrangements without using a credit card. Contact Capt. Ross @ 910-547-3689 or \u003Ca href=\u0022mailto:rossfowle@gmail.com\u0022\u003Eemail\u003C/a\u003E\r\n\r\n\u003Ccenter\u003E\u003Cstrong\u003EBe advised that registration is not confirmed until payment have been made.\u003C/strong\u003E\u003C/center\u003E";
+export const paymentArrangementBodyPlain =
+  "You have elected to make payment arrangements without using a credit card. Contact Capt. Ross @ 910-547-3689 or \u003Ca href=\u0022mailto:rossfowle@gmail.com\u0022\u003Eemail\u003C/a\u003E\r\n\r\nBe advised that registration is not confirmed until payment have been made.";
+
+// Balance Due
+
+/*             "to" : "captaind@capquest.com",
+            "cc" : "rossfowle@gmail.com, ross@captainsschool.com ",*/
+
+export const balanceDueSubject =
+  "[registration:entity:title] Registration [registration:field-last-name]";
+export const balanceDueBodyHTML =
+  "\u003Cdiv class=\u0022text-div\u0022\u003E\r\n\u003Clabel\u003EClass\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[registration:entity:title]\u003C/span\u003E\r\n\r\n\u003Clabel\u003EName\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[registration:field-first-name] [registration:field-last-name]\u003C/span\u003E\r\n\u003C/div\u003E\r\n\r\n\u003Clabel\u003ERegistration Date\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[registration:created]\u003C/span\u003E\r\n\r\n\u003Clabel\u003EAddress\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[registration:field-address:thoroughfare] [registration:field-address:premise] [registration:field-address:sub-premise] [registration:field-address:locality]\u003C/span\u003E\r\n[registration:field-address:administrative-area] [registration:field-address:postal-code]\r\n\r\n\u003Clabel\u003EPhone\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[registration:field_phone]\u003C/span\u003E\r\n\r\n\u003Clabel\u003EEmail\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[registration:anon-mail]\u003C/span\u003E\r\n\r\n\u003Clabel\u003ETuition\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[tuition:value]\u003C/span\u003E\r\n\r\n\u003Clabel\u003EAmount Paid\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[amount:value]\u003C/span\u003E\r\n\r\n\u003Clabel\u003EBalance Due\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[balance:value][balance-empty:value]\u003C/span\u003E\r\n\u003C/div\u003E\r\n\r\n[registration:field-first-name], [registration:field-last-name], [registration:created], [registration:field-address:thoroughfare] [registration:field-address:premise] [registration:field-address:sub-premise] [registration:field-address:locality] [registration:field-address:administrative-area] [registration:field-address:postal-code], [registration:field_phone], [registration:anon-mail], [registration:entity:title], [tuition:value], [amount:value], [balance:value][balance-empty:value]";
+export const balanceDueBodyPlain =
+  "[registration:field-first-name]\tFirst Name\tField \u0022field_first_name\u0022.\r\n[registration:field-last-name]\tLast Name\tField \u0022field_last_name\u0022.\r\n[registration:created] Registration Date\r\n[registration:field-address]\tAddress\tField \u0022field_address\u0022. The following properties may be appended to the token: country (Country), name_line (Full name), first_name (First name), last_name (Last name), organisation_name (Company), administrative_area (Administrative area (i.e. State / Province)), sub_administrative_area (Sub administrative area), locality (Locality (i.e. City)), dependent_locality (Dependent locality), postal_code (Postal code), thoroughfare (Thoroughfare (i.e. Street address)), premise (Premise (i.e. Apartment / Suite number)), sub_premise (Sub Premise (i.e. Suite, Apartment, Floor, Unknown.)\r\n[registration:field-phone]\tPhone\tField \u0022field_phone\u0022.\r\n[registration:field_first_name]\tFirst Name\tText field.\r\n[registration:field_last_name]\tLast Name\tText field.\r\n[registration:field_address]\tAddress\tPostal address field.\r\n[registration:field_phone]\tPhone\tTelephone number field.\r\n[registration:entity:tuition:value] Tuition      Tuition owed\r\n[registration:entity:amount:value] Amount      Amount Paid\r\n[registration:entity:balance:value] Balance      Balance Due\r\n\r\ntest, [registration:field-first-name], [registration:field-last-name], [registration:created], [registration:field-address:thoroughfare] [registration:field-address:premise] [registration:field-address:sub-premise] [registration:field-address:locality] [registration:field-address:administrative-area] [registration:field-address:postal-code], [registration:field_phone], [registration:anon-mail], [registration:entity:title], [tuition:value], [amount:value], [balance:value][balance-empty:value]";
+
+// Registration
+
+/*             "to" : "[registration:mail]",
+            "bcc" : "captaind@capquest.com, ross@captainsschool.com, rossfowle@gmail.com",*/
+
+export const registrationSubject =
+  "Thank you for registering for 3Bs Captains School [registration:entity:field_class_type] course!\u00a0";
+export const registrationBodyHTML =
+  "\u003Cp\u003EThis course begins on [registration:entity:field-date:custom: D m/d/y] Attendance at all sessions is mandatory to receive a certificate.\u003C/p\u003E\r\n\r\n\u003Cp\u003E\u003Cspan style=\u0022font-size:14px\u0022\u003E\u003Cspan style=\u0022color:#FF0000\u0022\u003E\u003Cstrong\u003EYour instructor for this course is [registration:entity:field_captain]. The class will be held at [registration:entity:field_classroom_location].\u0026nbsp;\u003C/strong\u003E\u003C/span\u003E\u003C/span\u003E\u003C/p\u003E\r\n\r\n\u003Cp\u003EI have included links the Coast Guard checklist and required license application forms. You are not required to have these complete prior to class, but it is a good idea to get a\u0026nbsp;head start on the application process.\u003C/p\u003E\r\n\u003Cp\u003Ca href=https://www.dco.uscg.mil/Portals/9/NMC/pdfs/checklists/mcp_fm_nmc5_31_web.pdf\u003EOUPV requirements\u003C/a\u003E\r\n\u003Ca href=https://www.dco.uscg.mil/Portals/9/NMC/pdfs/forms/CG_719B.pdf\u003EApplication (719 Bravo)\u003C/a\u003E \r\n\u003Ca href=https://www.dco.uscg.mil/Portals/9/NMC/pdfs/forms/CG_719K.pdf\u003EPhysical (719 Kilo)\u003C/a\u003E \r\n\u003Ca href=https://www.dco.uscg.mil/Portals/9/NMC/pdfs/forms/CG_719C.pdf\u003EConviction record if necessary (719 Charlie)\u003C/a\u003E  \r\n\u003Ca href=https://www.dco.uscg.mil/Portals/9/NMC/pdfs/forms/CG_719S.pdf\u003ESmall boat experience form (719 Sierra)\u003C/a\u003E \r\n\u003Ca href=https://www.dco.uscg.mil/Portals/9/NMC/pdfs/forms/CG_719P.pdf\u003EDrug testing form (719 Papa)\u003C/a\u003E \r\n\u003Ca href=\u0022https://www.dco.uscg.mil/Portals/9/NMC/pdfs/professional_qualifications/crediting_sea_service.pdf\u003EDefinition of a \u0022day\u0022\u003C/a\u003E\r\n\u003C/p\u003E\r\n\r\n\u003Cp\u003EIf you have any questions or concerns about this course, please e-mail me at\u0026nbsp;ross@captainsschool.com or call me at (910) 547-3689.\u003Cbr /\u003E\r\n\u0026nbsp;\u003Cbr /\u003E\r\nThank You,\u003Cbr /\u003E\r\nRoss Fowle, BMCM, USCG (ret)\u003Cbr /\u003E\r\n3Bs Captains School\u003C/p\u003E\r\n";
+export const registrationBodyPlain =
+  "This course begins on [registration:entity:field_date:custom D m/d/y] Attendance at all classes is mandatory to receive a certificate.\r\n\r\nYour instructor for this course is [registration:entity:field_captain]. The class will be held at [registration:entity:field_classroom_location]. \r\n\r\nI have included links the Coast Guard checklist and required license application forms. You are not required to have these complete prior to class, but it is a good idea to get a\u00a0head start on the application process.\r\n\r\nIf you have any questions or concerns about this course, please e-mail me at\u00a0ross@captainsschool.com or call me at (910) 547-3689.\r\n\u00a0\r\nThank You,\r\nRoss Fowle, BMCM, USCG (ret)\r\n3Bs Captains School";
+
+// Contact Email
+
+/*             "to" : "ross@captainsschool.com",
+            "cc" : "captaind@capquest.com, rossfowle@gmail.com",*/
+
+export const contactEmailSubject = "3Bs Contact Form Submission";
+export const contactEmailBody =
+  "\u003Cdiv class=\u0022background\u0022\u003E\r\n\u003Cdiv class=\u0022email\u0022\u003E\r\n\u003Cdiv class=\u0022email-text\u0022\u003E\r\n\u003Cdiv class=\u0022header\u0022\u003EYou\u0027ve just received a new submission to your Contact Form\u003C/div\u003E\r\n\u003Cdiv\u003E\u003Cstrong\u003ESubmitted Information:\u003C/strong\u003E\u003C/div\u003E\r\n\u003Chr /\u003E\r\n\r\n\r\n\u003Cdiv class=\u0022text-div\u0022\u003E\r\n\u003Clabel\u003EName\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[entityform:field-first-name] [entityform:field-last-name]\u003C/span\u003E\r\n\u003C/div\u003E\r\n\r\n\u003Cdiv class=\u0022text-div\u0022\u003E\r\n\u003Clabel\u003EEmail\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[entityform:field-email]\u003C/span\u003E\r\n\u003C/div\u003E\r\n\r\n\u003Cdiv class=\u0022text-div\u0022\u003E\r\n\u003Clabel\u003EPhone Number\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[entityform:field-phone]\u003C/span\u003E\r\n\u003C/div\u003E\r\n\r\n\u003Cdiv class=\u0022text-div\u0022\u003E\r\n\u003Clabel\u003ESubject\u003C/label\u003E\r\n\u003Cspan class=\u0022text\u0022\u003E[entityform:field-subject]\u003C/span\u003E\r\n\u003C/div\u003E\r\n\r\n\u003C/div\u003E\r\n\u003C/div\u003E\r\n\u003C/div\u003E";

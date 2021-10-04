@@ -9,12 +9,6 @@ import BootstrapTable from "react-bootstrap-table-next";
 export default function Table({ ...props }) {
   const rowEvents = {
     onClick: (e, row, rowIndex) => {
-      console.log("e");
-      console.log(e);
-      console.log("row");
-      console.log(row);
-      console.log("rowIndex");
-      console.log(rowIndex);
       props.setValue(row);
     },
   };

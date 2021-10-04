@@ -12,7 +12,7 @@ export default function RegistrationModal({ ...props }) {
           Check-out can take a small amount of time, so please wait patiently.
           If you have any issues registering, please call Ross at 888-598-9598
         </div>
-        <RegistrationForm />
+        <RegistrationForm classValue={props.classValue} />
       </Modal.Body>
     </Modal>
   );

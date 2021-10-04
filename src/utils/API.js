@@ -2,6 +2,10 @@ import axios from "axios";
 import axiosRetry from "axios-retry";
 import format from "string-format";
 
+/**
+ * NOTE: STRAPI IS VERY FINICKY WITH THE APIs AND SLASHES
+ */
+
 let prefix = "/";
 
 class API {
@@ -37,6 +41,9 @@ class API {
 
   registrationsAPI = prefix + "registrations/";
 
+  orderTokenAPI = prefix + "orders/gettoken/{fake_id}";
+  orderPaymentAPI = prefix + "orders/payment/";
+
   returnVals(data) {
     return data;
   }
@@ -71,7 +78,6 @@ class API {
     let constructedURL = this.constructURL(API, args);
     let body = args["body"];
     axiosRetry(axios, { retries: this.retry });
-    //console.log("PATCHY PATCH FACE");
     return axios.patch(constructedURL, body, this.config);
   }
 

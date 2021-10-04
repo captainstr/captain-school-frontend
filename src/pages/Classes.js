@@ -70,8 +70,6 @@ export default function Classes() {
   useEffect(() => {
     async function captainController() {
       const classes = await getClasses();
-      console.log("classes");
-      console.log(classes);
       setClasses(classes);
     }
     captainController();
@@ -82,29 +80,25 @@ export default function Classes() {
   }
 
   return (
-    console.log("class value herererere"),
-    console.log(classValue),
-    (
-      <div id="content">
-        <TitleText text={classesTitle} />
-        <SubTitleText text={classesSubTitle} />
+    <div id="content">
+      <TitleText text={classesTitle} />
+      <SubTitleText text={classesSubTitle} />
 
-        <div className="content">
-          <SmallRed />
-        </div>
-
-        <Table
-          data={classes}
-          columns={columns}
-          defaultSorted={defaultSorted}
-          setValue={setClassValue}
-        />
-
-        {classValue !== null ? (
-          <RegistrationModal classValue={classValue} setValue={setClassValue} />
-        ) : null}
+      <div className="content">
+        <SmallRed />
       </div>
-    )
+
+      <Table
+        data={classes}
+        columns={columns}
+        defaultSorted={defaultSorted}
+        setValue={setClassValue}
+      />
+
+      {classValue !== null ? (
+        <RegistrationModal classValue={classValue} setValue={setClassValue} />
+      ) : null}
+    </div>
   );
 }
 

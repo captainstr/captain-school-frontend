@@ -1,3 +1,4 @@
+// TODO I don't think we're using this anywhere anymore
 export const states = [
   "Alabama",
   "Alaska",
@@ -50,3 +51,5 @@ export const states = [
   "Wisconsin",
   "Wyoming",
 ];
+
+export const maxAllowDepositDate = 21;

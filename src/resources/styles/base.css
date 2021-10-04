@@ -234,3 +234,10 @@ input[type="button"]:hover {
 .region-sidebar-second .block .content {
   background: #fdfdfd;
 }
+
+.Collapsible {
+  background-color: #0093c5;
+  color: white;
+  font-size: 26px;
+  text-align: center;
+}
