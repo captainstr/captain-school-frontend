@@ -5,11 +5,9 @@ import "../resources/styles/base.css";
 import "../resources/styles/base_two.css";
 import "../resources/styles/captain.css";
 import "../resources/styles/fromweb.css";
-import { classes } from "../resources/data/dummyData";
 import { TitleText, SubTitleText } from "../components/StyledText";
 import { classesTitle, classesSubTitle } from "../resources/data/text.js";
 import Table from "../components/Table";
-import ClassModal from "../components/modals/ClassModal";
 import RegistrationModal from "../components/modals/RegistrationModal";
 import { getClasses } from "../controllers/classController";
 
@@ -52,15 +50,6 @@ const defaultSorted = [
     dataField: "date",
     order: "desc",
   },
-];
-
-const data = [
-  { id: "test3", name: "cheese", price: "2" },
-  { id: "test2", name: "dinosaur", price: "30" },
-  { id: "test1", name: "goat", price: "8" },
-  { id: "test4", name: "monkey", price: "4" },
-  { id: "test5", name: "orange", price: "5" },
-  { id: "test6", name: "jack", price: "7" },
 ];
 
 export default function Classes() {

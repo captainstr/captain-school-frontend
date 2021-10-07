@@ -1,6 +1,7 @@
 import API from "../utils/API";
 import client from "braintree-web/client";
 import hostedFields from "braintree-web/hosted-fields";
+import { getLastItem } from "../utils/misc";
 
 const api = new API();
 
@@ -86,7 +87,13 @@ async function brainTreeCreateHostedFields(clientErr, clientInstance) {
 
             const transactionId = await processOrder(order);
 
-            let values = getValues();
+            const page = getLastItem(window.location.href);
+            let values;
+            if (page === "balance") {
+              values = getBalanceValues();
+            } else {
+              values = getValues();
+            }
 
             values.transaction_id = transactionId;
             saveRegistrations(values);
@@ -100,10 +107,22 @@ async function brainTreeCreateHostedFields(clientErr, clientInstance) {
   );
 }
 
-function getValues() {
-  const email = document.querySelector("#formEmail").value;
+// Both of these are inefficient - Braintree hack - may be possible to write it cleaner
+
+function getBalanceValues() {
   const firstname = document.querySelector("#formFName").value;
   const lastname = document.querySelector("#formLName").value;
+  const values = {
+    firstname,
+    lastname,
+  };
+  return values;
+}
+
+function getValues() {
+  const firstname = document.querySelector("#formFName").value;
+  const lastname = document.querySelector("#formLName").value;
+  const email = document.querySelector("#formEmail").value;
   const phone_number = document.querySelector("#formPhone").value;
   const address1 = document.querySelector("#formAddress1").value;
   const address2 = document.querySelector("#formAddress2").value;

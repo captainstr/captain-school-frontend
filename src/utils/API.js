@@ -50,8 +50,6 @@ class API {
 
   get(API, args = this.defaultArgs) {
     this.call = "GET";
-    //console.log("GET ARGS");
-    //console.log(args.params);
     let constructedURL = this.constructURL(API, args);
     axiosRetry(axios, { retries: this.retry });
     return axios.get(constructedURL, this.config);
@@ -124,8 +122,6 @@ class API {
       count++;
     }
     constructedURL = constructedURL + argumentStr;
-    console.log("constructed URL");
-    console.log(constructedURL);
     return constructedURL;
   }
 }

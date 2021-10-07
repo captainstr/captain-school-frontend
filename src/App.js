@@ -15,6 +15,8 @@ import Registrations from "./pages/Admin/Registrations";
 // TODO REMOVE BEFORE PRODUCTION - just for testing
 import RegForm from "./components/RegistrationForm";
 import { OUPV, Masters, Assistance, Online } from "./pages/Syllabi";
+import Balance from "./pages/Balance";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
         <Route path="/admin/registrations" exact component={Registrations} />
         <Route path="/regform" exact component={RegForm} />
         <Route path="/csregistration/:registrationId" component={ThankYou} />
+        <Route path="/balance" component={Balance} />
+        <Route path="*" component={NotFound} />
       </Switch>
     </BrowserRouter>
   );

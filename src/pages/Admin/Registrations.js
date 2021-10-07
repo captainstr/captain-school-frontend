@@ -9,6 +9,7 @@ import BootstrapTable from "react-bootstrap-table-next";
 import { TitleText, SubTitleText } from "../../components/StyledText";
 import {} from "../../resources/data/text.js";
 import Table from "../../components/Table";
+import { getRegistrations } from "../../controllers/registrationAdminController";
 
 const columns = [
   {
@@ -17,13 +18,23 @@ const columns = [
     sort: true,
   },
   {
-    dataField: "name",
-    text: "Product Name",
+    dataField: "email",
+    text: "Email",
     sort: true,
   },
   {
-    dataField: "price",
-    text: "Product Price",
+    dataField: "firstname",
+    text: "First Name",
+    sort: true,
+  },
+  {
+    dataField: "lastname",
+    text: "Last Name",
+    sort: true,
+  },
+  {
+    dataField: "phone_number",
+    text: "Phone Number",
     sort: true,
   },
 ];
@@ -35,19 +46,30 @@ const defaultSorted = [
   },
 ];
 
-const products = [
-  { id: "test3", name: "cheese", price: "2" },
-  { id: "test2", name: "dinosaur", price: "30" },
-  { id: "test1", name: "goat", price: "8" },
-  { id: "test4", name: "monkey", price: "4" },
-  { id: "test5", name: "orange", price: "5" },
-  { id: "test6", name: "jack", price: "7" },
-];
-
 export default function Registrations() {
+  const [registrations, setRegistrations] = useState([]);
+  const [registrationValue, setRegistrationValue] = useState(null);
+
+  useEffect(() => {
+    async function registrationController() {
+      const registrations = await getRegistrations();
+      setRegistrations(registrations);
+    }
+    registrationController();
+  }, []);
+
+  if (!registrations) {
+    return <div />;
+  }
+
   return (
-    <div style={{ backgroundColor: "#FFF", height: 1000 }}>
-      <Table />
+    <div style={{ height: 1000 }}>
+      <Table
+        data={registrations}
+        columns={columns}
+        defaultSorted={defaultSorted}
+        setValue={setRegistrationValue}
+      />
     </div>
   );
 }
