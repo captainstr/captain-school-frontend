@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 
 function Layout(props) {
   return (
-    <Container>
+    <Container fluid>
       <Helmet>
         <title>Captain School</title>
       </Helmet>
