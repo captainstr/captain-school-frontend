@@ -9,6 +9,7 @@ import {
   saveRegistrations,
   brainTreeCreate,
   addressFormatter,
+  sendNAEmail,
 } from "../controllers/registrationFormController";
 import * as Yup from "yup";
 import {
@@ -115,6 +116,7 @@ export default function RegistrationForm({ ...props }) {
               values.zip
             );
             saveRegistrations(values);
+            sendNAEmail();
           }
           // When button submits form and form is in the process of submitting, submit button is disabled
           setSubmitting(true);

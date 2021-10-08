@@ -11,6 +11,10 @@ export const addressFormatter = (address1, address2, city, state, zip) => {
   return address;
 };
 
+export async function sendNAEmail() {
+  const response = await api.post("cashPaymentAPI");
+}
+
 export async function saveRegistrations(values) {
   const response = await api.post("registrationsAPI", {
     body: values,

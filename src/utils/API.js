@@ -43,6 +43,7 @@ class API {
 
   orderTokenAPI = prefix + "orders/gettoken/{fake_id}";
   orderPaymentAPI = prefix + "orders/payment/";
+  cashPaymentAPI = prefix + "orders/cashpayment/";
 
   returnVals(data) {
     return data;
