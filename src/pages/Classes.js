@@ -6,6 +6,7 @@ import { TitleText, LightBlueText, RedText } from "../components/StyledText";
 import { classesTitle, classesSubTitle } from "../resources/data/text.js";
 import Table from "../components/Table";
 import RegistrationModal from "../components/modals/RegistrationModal";
+import ClassModal from "../components/modals/ClassModal";
 import { getClasses } from "../controllers/classController";
 import Layout from "../components/Layout";
 import Row from "react-bootstrap/Row";
@@ -45,6 +46,11 @@ const defaultSorted = [
 export default function Classes() {
   const [classes, setClasses] = useState([]);
   const [classValue, setClassValue] = useState(null);
+  const [registration, setRegistration] = useState(null);
+
+  const registrationalModalSet = (registrationModal) => {
+    setRegistration(registrationModal);
+  };
 
   useEffect(() => {
     async function captainController() {
@@ -132,9 +138,18 @@ export default function Classes() {
             </Col>
           </Row>
         </div>
-
         {classValue !== null ? (
-          <RegistrationModal classValue={classValue} setValue={setClassValue} />
+          <ClassModal
+            classValue={classValue}
+            setValue={setClassValue}
+            registrationalModalSet={registrationalModalSet}
+          />
+        ) : null}
+        {registration !== null ? (
+          <RegistrationModal
+            classValue={classValue}
+            setValue={setRegistration}
+          />
         ) : null}
       </div>
     </Layout>
@@ -143,4 +158,10 @@ export default function Classes() {
 
 /*        {classValue !== null ? (
           <ClassModal classValue={classValue} setValue={setClassValue} />
-        ) : null}*/
+        ) : null}
+        
+                {classValue !== null ? (
+          <RegistrationModal classValue={classValue} setValue={setClassValue} />
+        ) : null}
+        
+        */

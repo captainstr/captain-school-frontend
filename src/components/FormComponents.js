@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { states } from "../resources/data/constants";
+import { RedText } from "../components/StyledText";
 
 export const CONTAINER = styled.div`
   height: auto;
@@ -33,7 +34,9 @@ export function FormName({ ...props }) {
       <Row>
         <Col>
           <Form.Group controlId="formFName">
-            <Form.Label>First Name :</Form.Label>
+            <Form.Label>
+              First Name <RedText text={"*"} />
+            </Form.Label>
             <Form.Control
               type="text"
               name="firstname"
@@ -46,7 +49,9 @@ export function FormName({ ...props }) {
         </Col>
         <Col>
           <Form.Group controlId="formLName">
-            <Form.Label>Last Name :</Form.Label>
+            <Form.Label>
+              Last Name <RedText text={"*"} />
+            </Form.Label>
             <Form.Control
               type="text"
               name="lastname"
@@ -86,7 +91,7 @@ export function FormCredit({ ...props }) {
     <>
       <Row>
         <Col>
-          <Form.Group>
+          <Form.Group style={{ display: "flex" }}>
             <Form.Label>Card Number :</Form.Label>
             <div
               type="text"
@@ -100,7 +105,7 @@ export function FormCredit({ ...props }) {
           </Form.Group>
         </Col>
         <Col>
-          <Form.Group>
+          <Form.Group style={{ display: "flex" }}>
             <Form.Label>Expiration Date :</Form.Label>
             <div
               type="text"
@@ -114,7 +119,7 @@ export function FormCredit({ ...props }) {
           </Form.Group>
         </Col>
       </Row>
-      <Form.Group>
+      <Form.Group style={{ display: "flex" }}>
         <Form.Label>CVV :</Form.Label>
         <div
           type="password"
@@ -136,7 +141,9 @@ export function FormAddress({ ...props }) {
       <Row>
         <Col>
           <Form.Group className="mb-3" controlId="formAddress1">
-            <Form.Label>Address</Form.Label>
+            <Form.Label>
+              Address 1 <RedText text={"*"} />
+            </Form.Label>
             <Form.Control
               placeholder="1234 Main St"
               name="address1"
@@ -160,7 +167,9 @@ export function FormAddress({ ...props }) {
       <Row className="mb-3">
         <Col>
           <Form.Group as={Col} controlId="formCity">
-            <Form.Label>City</Form.Label>
+            <Form.Label>
+              City <RedText text={"*"} />
+            </Form.Label>
             <Form.Control
               onChange={props.handleChange}
               onBlur={props.handleBlur}
@@ -170,7 +179,9 @@ export function FormAddress({ ...props }) {
         </Col>
         <Col>
           <Form.Group controlId="formState">
-            <Form.Label>State</Form.Label>
+            <Form.Label>
+              State <RedText text={"*"} />
+            </Form.Label>
             <Form.Select
               name="state"
               onChange={props.handleChange}
@@ -184,7 +195,9 @@ export function FormAddress({ ...props }) {
         </Col>
       </Row>
       <Form.Group as={Col} controlId="formZip">
-        <Form.Label>Zip</Form.Label>
+        <Form.Label>
+          Zip <RedText text={"*"} />
+        </Form.Label>
         <Form.Control
           name="zip"
           onChange={props.handleChange}

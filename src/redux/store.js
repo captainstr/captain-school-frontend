@@ -6,14 +6,14 @@ export const reducers = combineReducers({
 });
 
 const loggerMiddleware = (store) => (next) => (action) => {
-  console.log("Action type:", action.type);
+  //console.log("Action type:", action.type);
   //alert("Action type:" + action.type);
-  console.log(action);
-  console.log("Action payload:", action.payload);
-  console.log("State before:", store.getState());
+  //console.log(action);
+  //console.log("Action payload:", action.payload);
+  //console.log("State before:", store.getState());
   //alert(JSON.stringify(store.getState()))
   next(action);
-  console.log("State after:", store.getState());
+  //console.log("State after:", store.getState());
 };
 
 export function configureStore(initialState = {}) {

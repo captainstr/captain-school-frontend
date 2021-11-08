@@ -21,6 +21,7 @@ import {
 } from "./FormComponents";
 import Terms from "../pages/Terms";
 import Collapsible from "react-collapsible";
+import { RedText } from "../components/StyledText";
 
 const phoneRegExp =
   /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
@@ -135,9 +136,10 @@ export default function RegistrationForm({ ...props }) {
             onSubmit={handleSubmit}
             className="mx-auto"
             id="registration-form"
+            style={{ display: "flex", gap: 10, flexDirection: "column" }}
           >
             <Form.Group controlId="formEmail">
-              <Form.Label>Email :</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
                 type="text"
                 name="email"
@@ -152,7 +154,9 @@ export default function RegistrationForm({ ...props }) {
             </Form.Group>
             <FormName handleBlur={handleBlur} handleChange={handleChange} />
             <Form.Group controlId="formPhone">
-              <Form.Label>Phone :</Form.Label>
+              <Form.Label>
+                Phone <RedText text={"*"} />
+              </Form.Label>
               <Form.Control
                 type="text"
                 name="phone_number"
@@ -193,13 +197,13 @@ export default function RegistrationForm({ ...props }) {
             ) : null}
 
             {dateWithinDepositRange(props.classValue) ? null : (
-              <strong className="amount-calc-date" style={{ color: "orange" }}>
+              <strong className="amount-calc-date" style={{ color: "#7a7a7a" }}>
                 {"You may only pay the full amount when less than " +
                   maxAllowDepositDate +
                   " days from the class"}
               </strong>
             )}
-            <div style={{ color: "orange" }}>
+            <div style={{ color: "#7a7a7a" }}>
               Tuition: ${props.classValue.amount}
             </div>
             <Form.Group controlId="amount">

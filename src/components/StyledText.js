@@ -159,7 +159,19 @@ export function BulletList({ ...props }) {
       <div>{props.title}</div>
       <ul>
         {props.array.map((item, index) => (
-          <li key={index}>{item.item}</li>
+          <li
+            key={index}
+            style={{ textAlign: props.textAlign ? props.textAlign : "center" }}
+          >
+            <span
+              style={{
+                color: props.color ? props.color : "inherit",
+                fontWeight: props.fontWeight ? props.fontWeight : "normal",
+              }}
+            >
+              {item.item}
+            </span>
+          </li>
         ))}
       </ul>
     </div>

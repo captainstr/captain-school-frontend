@@ -174,9 +174,11 @@ export const addressPhoneNum = "888-598-9598";
 
 export const termsTitle = "Terms";
 export const termsList = [
-  "We store name, address and phone number for registration purposes only",
-  "We DO NOT store your creit card information",
-  "We DO NOT share your informatiion with any other entity",
+  {
+    item: "We store name, address and phone number for registration purposes only",
+  },
+  { item: "We DO NOT store your creit card information" },
+  { item: "We DO NOT share your informatiion with any other entity" },
 ];
 export const termsDesc = [
   "All payments for classes are fully refundable for cancelations made 30 days or longer from the scheduled class start date. Students that do not cancel at least 30 days prior to their class date are offered a seat in a future scheduled class.",

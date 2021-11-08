@@ -81,7 +81,6 @@ function ModalLinkChild({ link, ...props }) {
     props.setModal(link.modalValue);
   };
   if (typeof link === "undefined") {
-    console.log("another one!");
     return <></>;
   }
   return (
