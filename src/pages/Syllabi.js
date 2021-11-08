@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../resources/styles/base.css";
-import "../resources/styles/base_two.css";
 import "../resources/styles/captain.css";
-import "../resources/styles/fromweb.css";
+
 import {
   oupvTitle,
   oupvText,
@@ -77,8 +76,10 @@ function Breadcrumb({ ...props }) {
 
 export function OUPV() {
   return (
-    <div id="content">
-      <Breadcrumb text={oupvTitle} />
+    <div
+      id="content"
+      style={{ display: "flex", flexDirection: "column", gap: 15 }}
+    >
       <TitleText text={oupvTitle} />
 
       {oupvText.map((item, index) => (
@@ -99,21 +100,45 @@ export function OUPV() {
 
 export function Masters() {
   return (
-    <div id="content">
-      <Breadcrumb text={mastersTitle} />
+    <div
+      id="content"
+      style={{ display: "flex", flexDirection: "column", gap: 15 }}
+    >
       <TitleText text={mastersTitle} />
 
-      <p className="rtecenter">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <img alt="" height="313" src={HeadBoat} width="500" />
-      </p>
-      <div>
-        <NormalText text={masters100} />
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 15 }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <NormalText text={masters100} />
+        </div>
         {mastersText.map((item, index) => (
           <div>
-            <GrayText text={item} key={index} />
+            <NormalText text={item} key={index} />
           </div>
         ))}
-        <NormalText text={mastersNote} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <NormalText text={mastersNote} />
+        </div>
       </div>
     </div>
   );
@@ -121,28 +146,52 @@ export function Masters() {
 
 export function Assistance() {
   return (
-    <div id="content">
-      <Breadcrumb text={assistanceTitle} />
+    <div
+      id="content"
+      style={{ display: "flex", flexDirection: "column", gap: 15 }}
+    >
       <TitleText text={assistanceTitle} />
 
-      <p className="rtecenter">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <img alt="" height="300" src={BoatTowing} width="400" />
-      </p>
+      </div>
       <GrayText text={assistanceText} />
-      <GiantRed text={assistanceWarning} />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <GiantRed text={assistanceWarning} />
+      </div>
     </div>
   );
 }
 
 export function Online() {
   return (
-    <div id="content">
-      <Breadcrumb text={onlineTitle} />
+    <div
+      id="content"
+      style={{ display: "flex", flexDirection: "column", gap: 15 }}
+    >
       <TitleText text={onlineTitle} />
 
-      <p className="rtecenter">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <img alt="" height="134" src={eCapLogo} width="751" />
-      </p>
+      </div>
 
       {onlineText.map((item, index) => (
         <div>

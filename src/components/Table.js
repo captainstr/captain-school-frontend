@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 //import "../../resources/styles/base.css";
-//import "../../resources/styles/base_two.css";
 //import "../../resources/styles/captain.css";
 //import "../../resources/styles/fromweb.css";
 
@@ -14,17 +15,21 @@ export default function Table({ ...props }) {
   };
 
   return (
-    <div style={{ backgroundColor: "#FFF", height: 200 }}>
-      <BootstrapTable
-        bootstrap4
-        striped
-        hover
-        keyField="id"
-        data={props.data}
-        columns={props.columns}
-        defaultSorted={props.defaultSorted}
-        rowEvents={rowEvents}
-      />
+    <div>
+      <Row className="justify-content-md-center">
+        <Col xs lg="10" className="text-center">
+          <BootstrapTable
+            bootstrap4
+            striped
+            hover
+            keyField="id"
+            data={props.data}
+            columns={props.columns}
+            defaultSorted={props.defaultSorted}
+            rowEvents={rowEvents}
+          />
+        </Col>
+      </Row>
     </div>
   );
 }

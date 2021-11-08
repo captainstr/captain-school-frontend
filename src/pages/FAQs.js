@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "../components/Layout";
 import "../resources/styles/base.css";
-import "../resources/styles/base_two.css";
 import "../resources/styles/captain.css";
-import "../resources/styles/fromweb.css";
+
 import { faqTitle, faqItems } from "../resources/data/text.js";
 import { TitleText } from "../components/StyledText.js";
 
 export default function FAQs() {
   return (
-    <div about="/faqs">
+    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
       <TitleText text={faqTitle} />
       {faqItems.map((faqItem, index) => (
         <div key={index}>

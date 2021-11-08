@@ -2,10 +2,11 @@ import React, { useState, useEffect, Fragment } from "react";
 import { NavLink, Link } from "react-router-dom";
 import axios from "axios";
 import LineIcon from "react-lineicons";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { setModal } from "../redux/actions/modal";
 import "../resources/styles/base.css";
-import "../resources/styles/base_two.css";
 import "../resources/styles/captain.css";
-import "../resources/styles/fromweb.css";
 
 const links = [
   {
@@ -20,33 +21,33 @@ const links = [
     name: "Course Descriptions",
     childLinks: [
       {
-        url: "/oupv",
+        modalValue: "oupv",
         name: "OUPV (6 pack)",
       },
       {
-        url: "/masters",
-        name: "Master's upgrade to &lt; 100 GT",
+        modalValue: "masters",
+        name: "Master's upgrade to < 100 GT",
       },
       {
-        url: "/assistance",
+        modalValue: "assistance",
         name: "Assistance Towing",
       },
       {
-        url: "/online",
+        modalValue: "online",
         name: "Online/Classroom Blended OUPV",
       },
     ],
   },
   {
-    url: "/faqs",
+    modalValue: "faqs",
     name: "FAQs",
   },
   {
-    url: "/privateclasses",
+    modalValue: "privateclasses",
     name: "Private Classes",
   },
   {
-    url: "/resources",
+    modalValue: "about",
     name: "About 3BS",
   },
 ];
@@ -54,12 +55,7 @@ const links = [
 function RealLink({ link }) {
   return (
     <li className="leaf">
-      <a
-        href={link.url}
-        className="ctools-use-modal ctools-use-modal-processed"
-      >
-        {link.name}
-      </a>
+      <a href={link.url}>{link.name}</a>
     </li>
   );
 }
@@ -70,54 +66,73 @@ function ParentLink({ link }) {
       <span className="nolink">Course Descriptions</span>
       <ul className="menu">
         {link.childLinks.map((childLink, index) => (
-          <RealLink link={childLink} key={index} />
+          <span>
+            <LinkRouter link={childLink} key={index} />
+          </span>
         ))}
       </ul>
     </Fragment>
   );
 }
 
-/*function ChildMenu({childLinks}) {
-    return(
+function ModalLinkChild({ link, ...props }) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.setModal(link.modalValue);
+  };
+  if (typeof link === "undefined") {
+    console.log("another one!");
+    return <></>;
+  }
+  return (
+    <li className="leaf">
+      <a href="#" onClick={(event) => handleSubmit(event)}>
+        {link.name}
+      </a>
+    </li>
+  );
+}
 
-    )
-}*/
+function LinkRouter({ link, ...props }) {
+  if (link.url) {
+    return <RealLink link={link} />;
+  } else if (link.childLinks) {
+    return (
+      <li className="expanded">
+        <ParentLink link={link} />
+      </li>
+    );
+  } else if (link.modalValue) {
+    return <ModalLink link={link} />;
+  }
+  return null;
+}
 
 function Header() {
   return (
-    <div id="header-menu">
-      <div id="header-menu-inside" className="clearfix">
-        <div className="grid_12">
-          <div id="navigation" className="clearfix">
-            <div className="region region-navigation">
-              <div
-                id="block-menu-block-1"
-                className="block block-menu-block contextual-links-region"
-              >
-                <div className="content">
-                  <div className="menu-block-wrapper menu-block-1 menu-name-main-menu parent-mlid-0 menu-level-1">
-                    <ul className="menu">
-                      {links.map((link, index) => (
-                        <Fragment key={index}>
-                          {link.url ? (
-                            <RealLink link={link} />
-                          ) : (
-                            <li className="expanded">
-                              <ParentLink link={link} />
-                            </li>
-                          )}
-                        </Fragment>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div id="header-menu" style={{ display: "flex", justifyContent: "center" }}>
+      <div className="clearfix">
+        <ul className="menu">
+          {links.map((link, index) => (
+            <span key={index}>
+              <LinkRouter link={link} />
+            </span>
+          ))}
+        </ul>
       </div>
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {};
+};
+
+function mapDispatchToProps(dispatch) {
+  let actions = bindActionCreators({ setModal }, dispatch);
+  return { ...actions, dispatch };
+}
+
+const ModalLink = connect(mapStateToProps, mapDispatchToProps)(ModalLinkChild);
 
 export default Header;

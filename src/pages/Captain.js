@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import "../resources/styles/base.css";
-import "../resources/styles/base_two.css";
 import "../resources/styles/captain.css";
-import "../resources/styles/fromweb.css";
+
 //import { captains } from "../resources/data/captains";
 import {
   MediumBlueText,

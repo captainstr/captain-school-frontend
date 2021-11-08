@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "../components/Layout";
 import "../resources/styles/base.css";
-import "../resources/styles/base_two.css";
 import "../resources/styles/captain.css";
-import "../resources/styles/fromweb.css";
+
 import { about, aboutCapSub, aboutTitle } from "../resources/data/text.js";
 import {
   GreenText,
@@ -26,17 +25,23 @@ export default function About() {
   }, []);
 
   return (
-    <div id="content">
+    <div id="content" style={{}}>
       <TitleText text={aboutTitle} />
       {about.map((aboutLine, index) => (
         <GreenText text={aboutLine} key={index} />
       ))}
-      <SubTitleText text={aboutCapSub} />
-      <table className="views-view-grid cols-4">
-        <tbody>
+      <div style={{ justifyContent: "center", display: "flex" }}>
+        <SubTitleText text={aboutCapSub} />
+      </div>
+      <table style={{ display: "flex" }}>
+        <tbody style={{ display: "flex", flexGrow: 1 }}>
           <tr
-            className="row-1 row-first row-last"
-            style={{ flexDirection: "row" }}
+            style={{
+              flexDirection: "row",
+              display: "flex",
+              justifyContent: "space-around",
+              flexGrow: 1,
+            }}
           >
             {Object.keys(captains).map((captain, index) => (
               <CaptainNamedImage
@@ -48,11 +53,12 @@ export default function About() {
           </tr>
         </tbody>
       </table>
+      {/*
       <div>
         <span className="close-link">
           <a href="#">Close</a>
         </span>
-      </div>
+</div>*/}
     </div>
   );
 }

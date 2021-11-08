@@ -1,25 +1,15 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Layout from "../components/Layout";
 import "../resources/styles/base.css";
-import "../resources/styles/base_two.css";
 import "../resources/styles/captain.css";
-import "../resources/styles/fromweb.css";
-import { TitleText, SubTitleText } from "../components/StyledText";
+
+import { TitleText, LightBlueText, RedText } from "../components/StyledText";
 import { classesTitle, classesSubTitle } from "../resources/data/text.js";
 import Table from "../components/Table";
 import RegistrationModal from "../components/modals/RegistrationModal";
 import { getClasses } from "../controllers/classController";
-
-function SmallRed() {
-  return (
-    <h2 className="rtecenter">
-      <span style={{ color: "#FF0000" }}>
-        <strong>More late summer, fall and winter classes coming soon!</strong>
-      </span>
-    </h2>
-  );
-}
+import Layout from "../components/Layout";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const columns = [
   {
@@ -68,26 +58,86 @@ export default function Classes() {
     return <div />;
   }
 
+  // TODO do more efficiently
   return (
-    <div id="content">
-      <TitleText text={classesTitle} />
-      <SubTitleText text={classesSubTitle} />
+    <Layout>
+      <div
+        id="content"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100vh",
+          alignItems: "center",
+          backgroundColor: "black",
+        }}
+      >
+        <div
+          className="px-5"
+          id="content"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            paddingTop: "2rem",
+            paddingBottom: "2rem",
+            gap: 15,
+          }}
+        >
+          <Row className="justify-content-md-center">
+            <Col md="8" lg="8">
+              <TitleText text={classesTitle} />
+            </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+            <Col md="8" lg="8">
+              <LightBlueText
+                text={classesSubTitle}
+                fontSize={"1rem"}
+                fontWeight={"bold"}
+              />
+            </Col>
+          </Row>
 
-      <div className="content">
-        <SmallRed />
+          <Row className="justify-content-md-center">
+            <Col md="6" lg="6">
+              <RedText
+                fontSize={"1.25rem"}
+                fontWeight={"bold"}
+                text={"More late summer, fall and winter classes coming soon!"}
+              />
+            </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+            <Col md="5" lg="5">
+              <a
+                href="https://captainjacksboatingschool.com/captains-course"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LightBlueText
+                  fontSize={"1rem"}
+                  fontWeight={"bold"}
+                  text={"For classes in New Jersey and New York click here"}
+                />
+              </a>
+            </Col>
+          </Row>
+          <Row className="justify-content-md-center">
+            <Col md="10" lg="10">
+              <Table
+                data={classes}
+                columns={columns}
+                defaultSorted={defaultSorted}
+                setValue={setClassValue}
+              />
+            </Col>
+          </Row>
+        </div>
+
+        {classValue !== null ? (
+          <RegistrationModal classValue={classValue} setValue={setClassValue} />
+        ) : null}
       </div>
-
-      <Table
-        data={classes}
-        columns={columns}
-        defaultSorted={defaultSorted}
-        setValue={setClassValue}
-      />
-
-      {classValue !== null ? (
-        <RegistrationModal classValue={classValue} setValue={setClassValue} />
-      ) : null}
-    </div>
+    </Layout>
   );
 }
 

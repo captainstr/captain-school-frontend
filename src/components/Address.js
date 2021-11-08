@@ -6,24 +6,31 @@ import {
   addressZIP,
   addressPhoneNum,
 } from "../resources/data/text.js";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function AddressMain() {
   return (
-    <span>
+    <div className="text-center">
       <RedText text={addressStreet} />
-      {", "}
-      <RedText text={addressState} />
-      <RedText text={addressZIP} />
-    </span>
+      <RedText text={", "} />
+      <RedText text={addressState} /> <RedText text={addressZIP} />
+    </div>
   );
 }
 
 export default function Address() {
   return (
-    <p className="rtecenter">
-      <RedText text={addressName} />
-      <AddressMain />
-      <RedText text={addressPhoneNum} />
-    </p>
+    <Row className="justify-content-md-center">
+      <Row>
+        <RedText text={addressName} />
+      </Row>
+      <Row>
+        <AddressMain />
+      </Row>
+      <Row>
+        <RedText text={addressPhoneNum} />
+      </Row>
+    </Row>
   );
 }

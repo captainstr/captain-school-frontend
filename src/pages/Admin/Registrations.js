@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 //import "../../resources/styles/base.css";
-//import "../../resources/styles/base_two.css";
 //import "../../resources/styles/captain.css";
 //import "../../resources/styles/fromweb.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";

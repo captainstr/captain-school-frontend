@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "../components/Layout";
 import "../resources/styles/base.css";
-import "../resources/styles/base_two.css";
 import "../resources/styles/captain.css";
-import "../resources/styles/fromweb.css";
+
 import helm from "../resources/images/helm.jpeg";
 import {
   privateClasses,
@@ -15,7 +14,9 @@ import { SubTitleText, TitleText } from "../components/StyledText.js";
 
 function Wheel() {
   return (
-    <div>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <SubTitleText text={privateClassesSub} />
       <img alt="" height="88" src={helm} width="88" />
     </div>
@@ -25,11 +26,15 @@ function Wheel() {
 export default function PrivateClasses() {
   return (
     <div
-      className="node node-page contextual-links-region"
       about="/private-classes"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
     >
       <TitleText text={privateClassesTitle} />
-      <p>
+      <div style={{ display: "flex", flexDirection: "column", gap: 15 }}>
         {privateClasses.map((privateClass, index) => (
           <div key={index}>
             <span style={{ fontSize: "18px", color: "#0000FF" }}>
@@ -37,7 +42,7 @@ export default function PrivateClasses() {
             </span>
           </div>
         ))}
-      </p>
+      </div>
       <Wheel />
     </div>
   );
