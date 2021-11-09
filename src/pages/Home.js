@@ -61,20 +61,20 @@ export default function Home() {
         <CGNotice />
         <SocialMedia />
 
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center g-0">
           <Col xs lg="7" className="text-center">
             <LargeBlueText text={charterBoatTitle} />
             <NormalText text={charterBoat} fontSize={"16px"} />
             <NormalText text={certificate} fontSize={"16px"} />
           </Col>
         </Row>
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center g-0">
           <Col xs lg="6" className="text-center">
             <MediumBlueText text={school} />
             <MediumBlueText text={experience} />
           </Col>
         </Row>
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center g-0">
           <Col xs lg="4" className="text-center">
             <Address />
           </Col>

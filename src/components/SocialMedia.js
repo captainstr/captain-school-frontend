@@ -8,7 +8,7 @@ import "../resources/styles/captain.css";
 
 export default function SocialMedia() {
   return (
-    <Row className="justify-content-center">
+    <Row className="justify-content-center g-0">
       <Col xs="1" lg="1" id="social-media">
         <div className="sm-ic">
           <a href="https://www.facebook.com/captainsschool/">

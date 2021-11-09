@@ -21,14 +21,14 @@ function AddressMain() {
 
 export default function Address() {
   return (
-    <Row className="justify-content-md-center">
-      <Row>
+    <Row className="justify-content-md-center g-0">
+      <Row className="g-0">
         <RedText text={addressName} />
       </Row>
-      <Row>
+      <Row className="g-0">
         <AddressMain />
       </Row>
-      <Row>
+      <Row className="g-0">
         <RedText text={addressPhoneNum} />
       </Row>
     </Row>
