@@ -32,7 +32,7 @@ function HeaderImage() {
 
 function CGNotice() {
   return (
-    <div className="justify-content-md-center g-0" style={{ display: "flex" }}>
+    <div className="justify-content-center g-0" style={{ display: "flex" }}>
       <div className="covid-link">
         <a href="https://www.dco.uscg.mil/national_maritime_center/">
           Latest COVID-19 update from the Coast Guard
