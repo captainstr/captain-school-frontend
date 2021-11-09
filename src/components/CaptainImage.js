@@ -1,4 +1,22 @@
-// TODO figure out a way to override _reboot.scss
+import {
+  localBaseUrlString,
+  devBaseUrlString,
+  prodBaseUrlString,
+} from "../resources/data/constants";
+
+// TODO clean up and abstract further
+
+let urlString = "";
+if (process.env.NODE_ENV === "local") {
+  urlString = localBaseUrlString;
+} else if (process.env.NODE_ENV === "development") {
+  urlString = devBaseUrlString;
+} else if (process.env.NODE_ENV === "production") {
+  urlString = prodBaseUrlString;
+} else {
+  urlString = localBaseUrlString;
+}
+
 export function CaptainNamedImage({ ...props }) {
   return (
     <td
@@ -27,7 +45,7 @@ export function CaptainImage({ ...props }) {
         {/*TODO move to an even higher function in... app.js? to determine what server*/}
         <img
           style={{ objectFit: "cover", height: 150, width: 150 }}
-          src={"http://localhost:1337" + props.captain.image.url}
+          src={urlString + props.captain.image.url}
           alt=""
         />
       </a>

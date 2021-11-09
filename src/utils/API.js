@@ -1,6 +1,11 @@
 import axios from "axios";
 import axiosRetry from "axios-retry";
 import format from "string-format";
+import {
+  localBaseUrlString,
+  devBaseUrlString,
+  prodBaseUrlString,
+} from "../resources/data/constants";
 
 /**
  * NOTE: STRAPI IS VERY FINICKY WITH THE APIs AND SLASHES
@@ -29,10 +34,6 @@ class API {
   setRetry(value) {
     this.retry = value;
   }
-
-  localBaseUrlString = "http://localhost:1337";
-  devBaseUrlString = "http://137.184.211.99:1337";
-  prodBaseUrlString = "https://api.captainsschool.com";
 
   captainsAPI = prefix + "captains/";
 
@@ -96,13 +97,13 @@ class API {
       endpoint = this[API];
     }
     if (process.env.NODE_ENV === "local") {
-      constructedURL = this.localBaseUrlString + endpoint;
+      constructedURL = localBaseUrlString + endpoint;
     } else if (process.env.NODE_ENV === "development") {
-      constructedURL = this.devBaseUrlString + endpoint;
+      constructedURL = devBaseUrlString + endpoint;
     } else if (process.env.NODE_ENV === "production") {
-      constructedURL = this.prodBaseUrlString + endpoint;
+      constructedURL = prodBaseUrlString + endpoint;
     } else {
-      constructedURL = this.localBaseUrlString + endpoint;
+      constructedURL = localBaseUrlString + endpoint;
     }
 
     if ("query" in args) {

@@ -53,3 +53,6 @@ export const states = [
 ];
 
 export const maxAllowDepositDate = 21;
+export const localBaseUrlString = "http://localhost:1337";
+export const devBaseUrlString = "http://137.184.211.99:1337";
+export const prodBaseUrlString = "https://api.captainsschool.com";
