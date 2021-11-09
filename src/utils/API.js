@@ -15,7 +15,6 @@ class API {
         "Content-Type": "application/json",
       },
     };
-    this.env = "local";
   }
 
   defaultArgs = {
@@ -32,7 +31,7 @@ class API {
   }
 
   localBaseUrlString = "http://localhost:1337";
-  devBaseUrlString = "https://dev.api.captainsschool.com";
+  devBaseUrlString = "http://137.184.211.99:1337/";
   prodBaseUrlString = "https://api.captainsschool.com";
 
   captainsAPI = prefix + "captains/";
@@ -96,12 +95,14 @@ class API {
     } else {
       endpoint = this[API];
     }
-    if (this.env === "local") {
+    if (process.env.NODE_ENV === "local") {
       constructedURL = this.localBaseUrlString + endpoint;
-    } else if (this.env === "dev") {
+    } else if (process.env.NODE_ENV === "development") {
       constructedURL = this.devBaseUrlString + endpoint;
-    } else if (this.env === "prod") {
+    } else if (process.env.NODE_ENV === "production") {
       constructedURL = this.prodBaseUrlString + endpoint;
+    } else {
+      constructedURL = this.localBaseUrlString + endpoint;
     }
 
     if ("query" in args) {
