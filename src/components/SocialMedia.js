@@ -8,8 +8,8 @@ import "../resources/styles/captain.css";
 
 export default function SocialMedia() {
   return (
-    <Row className="justify-content-md-center">
-      <Col xs lg="1" id="social-media">
+    <Row className="justify-content-center">
+      <Col xs="1" lg="1" id="social-media">
         <div className="sm-ic">
           <a href="https://www.facebook.com/captainsschool/">
             <img alt="" height="32" src={FBImg} width="32" />

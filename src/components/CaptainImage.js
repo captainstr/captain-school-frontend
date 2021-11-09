@@ -28,7 +28,10 @@ export function CaptainNamedImage({ ...props }) {
     >
       <span>
         <a
-          style={{ textDecoration: "none" }}
+          style={{
+            textDecoration: "none",
+            fontSize: "clamp(8px, 2vw, 16px)",
+          }}
           href={"captain/" + props.captain.slug}
         >
           {props.captain.fullname}
@@ -44,7 +47,11 @@ export function CaptainImage({ ...props }) {
       <a href={"captain/" + props.captain.slug}>
         {/*TODO move to an even higher function in... app.js? to determine what server*/}
         <img
-          style={{ objectFit: "cover", height: 150, width: 150 }}
+          style={{
+            objectFit: "cover",
+            width: "10vw",
+            height: "10vw",
+          }}
           src={urlString + props.captain.image.url}
           alt=""
         />
