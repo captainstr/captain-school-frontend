@@ -113,7 +113,19 @@ export function Masters() {
           alignItems: "center",
         }}
       >
-        <img alt="" height="313" src={HeadBoat} width="500" />
+        <img
+          alt=""
+          height="313"
+          src={HeadBoat}
+          width="500"
+          style={{
+            objectFit: "cover",
+            width: "75vw",
+            height: "50vw",
+            maxHeight: 313,
+            maxWidth: 475,
+          }}
+        />
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 15 }}>
         <div
@@ -190,7 +202,17 @@ export function Online() {
           alignItems: "center",
         }}
       >
-        <img alt="" height="134" src={eCapLogo} width="751" />
+        <img
+          alt=""
+          src={eCapLogo}
+          style={{
+            objectFit: "cover",
+            width: "45vw",
+            height: "7vw",
+            minWidth: 400,
+            minHeight: 65,
+          }}
+        />
       </div>
 
       {onlineText.map((item, index) => (
