@@ -111,7 +111,14 @@ function Header() {
   return (
     <div id="header-menu" style={{ display: "flex", justifyContent: "center" }}>
       <div className="clearfix">
-        <ul className="menu">
+        <ul
+          className="menu"
+          style={{
+            justifyContent: "center",
+            display: "flex",
+            flexWrap: "wrap",
+          }}
+        >
           {links.map((link, index) => (
             <span key={index}>
               <LinkRouter link={link} />
