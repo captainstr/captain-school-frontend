@@ -3,8 +3,6 @@ import API from "../utils/API";
 const api = new API();
 
 export async function getClasses() {
-  console.log("date");
-  console.log(new Date().toLocaleDateString("en-CA"));
   const response = await api.get("classesAPI", {
     query: {
       date_gte: new Date().toLocaleDateString("en-CA"),

@@ -55,8 +55,6 @@ export default function Classes() {
   useEffect(() => {
     async function captainController() {
       const classes = await getClasses();
-      console.log("returned classes");
-      console.log(classes);
       setClasses(classes);
     }
     captainController();
