@@ -66,8 +66,8 @@ function ParentLink({ link }) {
       <span className="nolink">Course Descriptions</span>
       <ul className="menu">
         {link.childLinks.map((childLink, index) => (
-          <span>
-            <LinkRouter link={childLink} key={index} />
+          <span key={index}>
+            <LinkRouter link={childLink} />
           </span>
         ))}
       </ul>

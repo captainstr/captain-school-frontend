@@ -3,9 +3,13 @@ import API from "../utils/API";
 const api = new API();
 
 export async function getClasses() {
-  const response = await api.get("classesAPI");
-  console.log("class response");
-  console.log(response);
+  console.log("date");
+  console.log(new Date().toLocaleDateString("en-CA"));
+  const response = await api.get("classesAPI", {
+    query: {
+      date_gte: new Date().toLocaleDateString("en-CA"),
+    },
+  });
   const classes = response.data.map((item) => {
     return {
       id: item.id,
