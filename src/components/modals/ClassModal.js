@@ -21,7 +21,9 @@ export default function ClassModal({ ...props }) {
         />
         <LightBlueText text={"Instructor:"} />
         <LightBlueText text={props.classValue.captain} />
-        <LightBlueText text={props.classValue.details} />
+        <div
+          dangerouslySetInnerHTML={{ __html: props.classValue.details }}
+        ></div>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>

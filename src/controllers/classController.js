@@ -4,6 +4,8 @@ const api = new API();
 
 export async function getClasses() {
   const response = await api.get("classesAPI");
+  console.log("class response");
+  console.log(response);
   const classes = response.data.map((item) => {
     return {
       id: item.id,
