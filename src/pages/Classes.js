@@ -104,15 +104,6 @@ export default function Classes() {
           </Row>
 
           <Row className="justify-content-md-center">
-            <Col md="6" lg="6">
-              <RedText
-                fontSize={"1.25rem"}
-                fontWeight={"bold"}
-                text={"More late summer, fall and winter classes coming soon!"}
-              />
-            </Col>
-          </Row>
-          <Row className="justify-content-md-center">
             <Col md="5" lg="5">
               <a
                 href="https://captainjacksboatingschool.com/captains-course"
