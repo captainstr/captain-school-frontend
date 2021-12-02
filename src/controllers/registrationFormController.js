@@ -11,12 +11,17 @@ export const addressFormatter = (address1, address2, city, state, zip) => {
   return address;
 };
 
-export async function sendNAEmail() {
-  const response = await api.post("cashPaymentAPI");
+export function sendNAEmail(values) {
+  api.post("cashPaymentAPI", {
+    body: values,
+  });
 }
 
-export async function saveRegistrations(values) {
-  const response = await api.post("registrationsAPI", {
+export async function saveRegistrations(values, classValue) {
+  let response = api.post("registrationsAPI", {
+    body: values,
+  });
+  api.post("initialRegistrationAPI", {
     body: values,
   });
 }
@@ -136,6 +141,15 @@ function getValues() {
   const address = addressFormatter(address1, address2, city, state, zip);
   const classValue = document.querySelector("#formClass").value;
   const depositcheck = document.querySelector("#formDeposit").value;
+  const amount = document.querySelector("#amount").value;
+  const deposit = document.querySelector("#deposit").value;
+  const title = document.querySelector("#title").value;
+  const date = document.querySelector("#date").value;
+  const classroom_location = document.querySelector(
+    "#classroom_location"
+  ).value;
+  const class_type = document.querySelector("#class_type").value;
+  const captain = document.querySelector("#captain").value;
   const values = {
     email,
     firstname,
@@ -144,6 +158,13 @@ function getValues() {
     address,
     class: classValue,
     depositcheck,
+    amount,
+    deposit,
+    title,
+    date,
+    classroom_location,
+    class_type,
+    captain,
   };
   return values;
 }

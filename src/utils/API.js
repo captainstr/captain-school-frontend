@@ -44,6 +44,7 @@ class API {
   orderTokenAPI = prefix + "orders/gettoken/{fake_id}";
   orderPaymentAPI = prefix + "orders/payment/";
   cashPaymentAPI = prefix + "orders/cashpayment/";
+  initialRegistrationAPI = prefix + "orders/initialregistration/";
 
   returnVals(data) {
     return data;
@@ -114,9 +115,12 @@ class API {
   }
 
   queryProcess(constructedURL, args) {
-    let argumentStr = "?";
+    let argumentStr = "";
     let count = 0;
     const keys = Object.keys(args["query"]);
+    if (keys.length > 0) {
+      argumentStr = "?";
+    }
     for (const key of keys) {
       if (count !== 0) {
         argumentStr += "&";

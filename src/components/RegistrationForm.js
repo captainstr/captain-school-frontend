@@ -84,6 +84,9 @@ export default function RegistrationForm({ ...props }) {
     depositcheck: null,
   });
 
+  console.log("props depo");
+  console.log(props.classValue);
+
   return (
     <CONTAINER>
       <Formik
@@ -96,6 +99,12 @@ export default function RegistrationForm({ ...props }) {
           depositcheck: "",
           amount: props.classValue.amount,
           class: props.classValue.id,
+          deposit: props.classValue.deposit,
+          class_type: props.classValue.class_type,
+          date: props.classValue.date,
+          classroom_location: props.classValue.classroom_location,
+          title: props.classValue.title,
+          captain: props.classValue.captain,
         }}
         validateOnChange={true}
         validate={(values) => {
@@ -107,7 +116,7 @@ export default function RegistrationForm({ ...props }) {
           setComponentValues(values);
         }}
         validationSchema={genValidationSchema(componentValues)}
-        onSubmit={async (values, { setSubmitting, resetForm }) => {
+        onSubmit={(values, { setSubmitting, resetForm }) => {
           if (values.depositcheck === "NA") {
             values.address = addressFormatter(
               values.address1,
@@ -117,7 +126,7 @@ export default function RegistrationForm({ ...props }) {
               values.zip
             );
             saveRegistrations(values);
-            sendNAEmail();
+            sendNAEmail(values);
           }
           // When button submits form and form is in the process of submitting, submit button is disabled
           setSubmitting(true);
@@ -206,6 +215,7 @@ export default function RegistrationForm({ ...props }) {
             <div style={{ color: "#7a7a7a" }}>
               Tuition: ${props.classValue.amount}
             </div>
+            {/* HIDDEN FIELDS */}
             <Form.Group controlId="amount">
               <Form.Control
                 name="amount"
@@ -214,6 +224,63 @@ export default function RegistrationForm({ ...props }) {
                 readOnly={true}
               />
             </Form.Group>
+            <Form.Group controlId="deposit">
+              <Form.Control
+                name="deposit"
+                value={props.classValue.deposit}
+                style={{ display: "none" }}
+                readOnly={true}
+              />
+            </Form.Group>
+            <Form.Group controlId="title">
+              <Form.Control
+                name="title"
+                value={props.classValue.title}
+                style={{ display: "none" }}
+                readOnly={true}
+              />
+            </Form.Group>
+            <Form.Group controlId="title">
+              <Form.Control
+                name="title"
+                value={props.classValue.title}
+                style={{ display: "none" }}
+                readOnly={true}
+              />
+            </Form.Group>
+            <Form.Group controlId="captain">
+              <Form.Control
+                name="captain"
+                value={props.classValue.captain}
+                style={{ display: "none" }}
+                readOnly={true}
+              />
+            </Form.Group>
+            <Form.Group controlId="class_type">
+              <Form.Control
+                name="class_type"
+                value={props.classValue.class_type}
+                style={{ display: "none" }}
+                readOnly={true}
+              />
+            </Form.Group>
+            <Form.Group controlId="classroom_location">
+              <Form.Control
+                name="classroom_location"
+                value={props.classValue.classroom_location}
+                style={{ display: "none" }}
+                readOnly={true}
+              />
+            </Form.Group>
+            <Form.Group controlId="date">
+              <Form.Control
+                name="date"
+                value={props.classValue.date}
+                style={{ display: "none" }}
+                readOnly={true}
+              />
+            </Form.Group>
+
             <Form.Group controlId="formClass">
               <Form.Control
                 name="formClass"
