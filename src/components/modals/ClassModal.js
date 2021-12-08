@@ -65,10 +65,18 @@ export default function ClassModal({ ...props }) {
         <LightBlueText text={"Instructor:"} />
         <LightBlueText text={props.classValue.captain} />
         <div
-          dangerouslySetInnerHTML={{ __html: props.classValue.details }}
-        ></div>
-        <div style={{ position: "absolute", top: 150, right: 20 }}>
-          <SimpleMap location={props.classValue.location} />
+          style={{
+            flexDirection: "row",
+            display: "flex",
+          }}
+        >
+          <div
+            dangerouslySetInnerHTML={{ __html: props.classValue.details }}
+            style={{ flex: 0.75 }}
+          ></div>
+          <div style={{ flex: 0.25 }}>
+            <SimpleMap location={props.classValue.location} />
+          </div>
         </div>
       </Modal.Body>
       <Modal.Footer>
