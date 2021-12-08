@@ -22,6 +22,7 @@ import {
 import Terms from "../pages/Terms";
 import Collapsible from "react-collapsible";
 import { RedText } from "../components/StyledText";
+import { withRouter } from "react-router-dom";
 
 const phoneRegExp =
   /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
@@ -72,20 +73,32 @@ const disableSubmit = (isSubmitting, values) => {
   return false;
 };
 
-export default function RegistrationForm({ ...props }) {
+function RegistrationForm({ ...props }) {
   const [braintree, setBrainTree] = useState(null);
 
   useEffect(() => {
     brainTreeCreate();
   }, [braintree]);
 
-  // necessary because Formik/Yup can't apparently track (or I can't figure out how they track) the fields inside the form for validation
   const [componentValues, setComponentValues] = useState({
     depositcheck: null,
   });
 
-  console.log("props depo");
-  console.log(props.classValue);
+  useEffect(() => {
+    document.querySelector("#registration-form").addEventListener(
+      "braintreefinished",
+      () => {
+        props.history.push({
+          pathname: "/registered",
+          state: {
+            classValue: props.classValue,
+            registration: componentValues,
+          },
+        });
+      },
+      false
+    );
+  }, [props, componentValues]);
 
   return (
     <CONTAINER>
@@ -333,3 +346,5 @@ export default function RegistrationForm({ ...props }) {
     </CONTAINER>
   );
 }
+
+export default withRouter(RegistrationForm);

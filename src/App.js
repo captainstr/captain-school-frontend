@@ -8,7 +8,6 @@ import About from "./pages/About";
 import Classes from "./pages/Classes";
 import Captain from "./pages/Captain";
 import Terms from "./pages/Terms";
-import Registered from "./pages/Registered";
 import Downloads from "./pages/Downloads";
 import ThankYou from "./pages/ThankYou";
 import Registrations from "./pages/Admin/Registrations";
@@ -36,11 +35,11 @@ function App() {
           <Route path="/online" exact component={Online} />
           <Route path="/captain/:slug" exact component={Captain} />
           <Route path="/terms" exact component={Terms} />
-          <Route path="/registered" exact component={Registered} />
           <Route path="/downloads" exact component={Downloads} />
           <Route path="/admin/registrations" exact component={Registrations} />
           <Route path="/regform" exact component={RegForm} />
-          <Route path="/csregistration/:registrationId" component={ThankYou} />
+          <Route path="/registered/:registrationId" component={ThankYou} />
+          <Route path="/registered" component={ThankYou} />
           <Route path="/balance" component={Balance} />
           <Route path="*" component={NotFound} />
         </Switch>

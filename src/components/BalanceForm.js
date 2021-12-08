@@ -48,7 +48,6 @@ export default function BalanceForm({ ...props }) {
     brainTreeCreate();
   }, []);
 
-  // necessary because Formik/Yup can't apparently track (or I can't figure out how they track) the fields inside the form for validation
   const [componentValues, setComponentValues] = useState({});
 
   return (
@@ -83,9 +82,10 @@ export default function BalanceForm({ ...props }) {
             onSubmit={handleSubmit}
             className="mx-auto"
             id="registration-form"
+            style={{ flexDirection: "column", display: "flex", gap: 20 }}
           >
-            <div>Balance Due: ${amount}</div>
-            <div>Please pay your balance</div>
+            <div style={{ color: "#7a7a7a" }}>Balance Due: ${amount}</div>
+            <div style={{ color: "#7a7a7a" }}>Please pay your balance</div>
             <FormName
               handleBlur={handleBlur}
               handleChange={handleChange}
@@ -105,6 +105,7 @@ export default function BalanceForm({ ...props }) {
               />
             </Form.Group>
             <Button
+              style={{ width: "10rem" }}
               variant={
                 disableSubmit(isSubmitting, values) ? "secondary" : "primary"
               }

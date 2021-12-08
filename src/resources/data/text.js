@@ -190,9 +190,9 @@ export const termsDesc = [
 
 // TODO replace with string replace
 export const registerTitle =
-  "Thank You, your registration for [title] has been placed";
+  "Thank You, your registration for {title} has been placed";
 export const registerText = [
-  "Your credit card has been charged [cost]",
+  "Your credit card has been charged {cost}",
   "Please check your email for registration confirmation and course details.",
   "If you do not receive an email confirmation in one day, please contact Ross at Ross@captainsschool.com or (910) 547-3689",
 ];

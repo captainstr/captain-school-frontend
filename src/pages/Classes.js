@@ -39,7 +39,7 @@ const columns = [
 const defaultSorted = [
   {
     dataField: "date",
-    order: "desc",
+    order: "asc",
   },
 ];
 

@@ -5,22 +5,29 @@ import { LightBlueText } from "../../components/StyledText";
 import GoogleMapReact from "google-map-react";
 import Geocode from "react-geocode";
 
+Geocode.setApiKey("AIzaSyD5sMaepM_qhq27uCMPKhjJDWBepaOjRxI");
+
 class SimpleMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      latlng: this.generateLatLng(),
+      latlng: null,
     };
     this.generateLatLng = this.generateLatLng.bind(this);
   }
 
   async generateLatLng() {
     if (this.props.location !== null) {
-      const latlng = await Geocode.fromAddress(this.props.location);
+      const latlngObj = await Geocode.fromAddress(this.props.location);
+      const latlng = latlngObj.results[0].geometry.location;
       this.setState({ latlng });
     } else {
       return null;
     }
+  }
+
+  async componentDidMount() {
+    await this.generateLatLng();
   }
 
   render() {
@@ -30,7 +37,7 @@ class SimpleMap extends Component {
     return (
       <div style={{ height: 200, width: 200 }}>
         <GoogleMapReact
-          //bootstrapURLKeys={{ key: /* YOUR KEY HERE */ }}
+          bootstrapURLKeys={{ key: "AIzaSyD5sMaepM_qhq27uCMPKhjJDWBepaOjRxI" }}
           defaultCenter={this.state.latlng}
           defaultZoom={14}
         ></GoogleMapReact>

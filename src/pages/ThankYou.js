@@ -1,23 +1,41 @@
-import {} from "../resources/data/text.js";
+import { registerTitle, registerText } from "../resources/data/text.js";
 import { TitleText } from "../components/StyledText.js";
+import Layout from "../components/Layout";
+import format from "string-format";
 
-export default function ThankYou() {
+export default function Registered({ ...props }) {
+  const state = props.location.state;
+  const processRegistered = (text) => {
+    const formatObj = {
+      title: state.classValue.title,
+      cost: state.registration.depositcheck
+        ? state.registration.deposit
+        : state.registration.amount,
+    };
+    let formattedText = format(text, formatObj);
+    return formattedText;
+  };
+
   return (
-    <div id="content">
-      <TitleText
-        text={
-          "Thank You, your registration for [date] [location] [class] has been placed"
-        }
-      />
-      <div> Your credit card has been charged [cost]</div>
-      <div>
-        Please check your email for registration confirmation and course
-        details.
+    <Layout>
+      <div
+        id="content"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          paddingBottom: "30vh",
+        }}
+      >
+        <TitleText text={processRegistered(registerTitle)} fontSize={"2rem"} />
+        {registerText.map((text, index) => (
+          <p key={index}>
+            <strong>{processRegistered(text)}</strong>
+          </p>
+        ))}
       </div>
-      <div>
-        If you do not receive an email confirmation in one day, please contact
-        Ross at Ross@captainsschool.com or (910) 547-3689
-      </div>
-    </div>
+    </Layout>
   );
 }
