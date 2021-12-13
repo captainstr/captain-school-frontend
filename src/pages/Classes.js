@@ -16,7 +16,13 @@ const columns = [
   {
     dataField: "date",
     text: "Date",
-    sort: false,
+    sort: true,
+    sortFunc: (a, b, order, dataField, rowA, rowB) => {
+      if (order === "asc") {
+        return new Date(a).getTime() - new Date(b).getTime();
+      }
+      return new Date(b).getTime() - new Date(a).getTime();
+    },
     style: { color: "#1487d4", cursor: "pointer" },
   },
   {
@@ -123,7 +129,7 @@ export default function Classes() {
               <Table
                 data={classes}
                 columns={columns}
-                defaultSorted={defaultSorted}
+                //defaultSorted={defaultSorted}
                 setValue={setClassValue}
               />
             </Col>

@@ -6,6 +6,7 @@ export async function getClasses() {
   const response = await api.get("classesAPI", {
     query: {
       date_gte: new Date().toLocaleDateString("en-CA"),
+      _sort: "date",
     },
   });
 
