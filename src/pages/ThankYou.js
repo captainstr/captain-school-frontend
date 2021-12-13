@@ -5,15 +5,23 @@ import format from "string-format";
 
 export default function Registered({ ...props }) {
   const state = props.location.state;
+  console.log("thank you page data");
+  console.log(state.registration.depositcheck);
   const processRegistered = (text) => {
     const formatObj = {
       title: state.classValue.title,
-      cost: state.registration.depositcheck
-        ? state.registration.deposit
-        : state.registration.amount,
+      cost: depositType(state.registration.depositcheck),
     };
     let formattedText = format(text, formatObj);
     return formattedText;
+  };
+
+  const depositType = (type) => {
+    if (type === "Deposit") {
+      return state.registration.deposit;
+    } else if (type === "Full") {
+      return state.registration.amount;
+    }
   };
 
   return (
@@ -27,6 +35,7 @@ export default function Registered({ ...props }) {
           alignItems: "center",
           height: "100vh",
           paddingBottom: "30vh",
+          paddingHorizontal: 10,
         }}
       >
         <TitleText text={processRegistered(registerTitle)} fontSize={"2rem"} />

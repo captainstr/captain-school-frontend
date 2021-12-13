@@ -19,7 +19,8 @@ class SimpleMap extends Component {
   async generateLatLng() {
     if (this.props.location !== null) {
       const latlngObj = await Geocode.fromAddress(this.props.location);
-      const latlng = latlngObj.results[0].geometry.location;
+      let latlng = latlngObj.results[0].geometry.location;
+      latlng.name = this.props.location;
       this.setState({ latlng });
     } else {
       return null;
@@ -30,16 +31,39 @@ class SimpleMap extends Component {
     await this.generateLatLng();
   }
 
+  handleApiLoadData = (map, maps, thePlace) => {
+    if (thePlace) {
+      let marker = new maps.Marker({
+        animation: maps.Animation.DROP,
+        position: { lat: thePlace.lat, lng: thePlace.lng },
+        map,
+      });
+
+      marker.customInfowindow = new maps.InfoWindow({
+        content: "<div>" + thePlace.name + "</div>",
+      });
+
+      marker.addListener("click", () => {
+        marker.customInfowindow.open(map, marker);
+      });
+    }
+  };
+
   render() {
     if (this.state.latlng === null) {
       return <div />;
     }
+    console.log(this.state.latlng);
     return (
       <div style={{ height: 200, width: 200 }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyD5sMaepM_qhq27uCMPKhjJDWBepaOjRxI" }}
           defaultCenter={this.state.latlng}
           defaultZoom={14}
+          yesIWantToUseGoogleMapApiInternals
+          onGoogleApiLoaded={({ map, maps }) =>
+            this.handleApiLoadData(map, maps, this.state.latlng)
+          }
         ></GoogleMapReact>
       </div>
     );
