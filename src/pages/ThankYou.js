@@ -4,13 +4,10 @@ import Layout from "../components/Layout";
 import format from "string-format";
 
 export default function Registered({ ...props }) {
-  const state = props.location.state;
-  console.log("thank you page data");
-  console.log(state.registration.depositcheck);
   const processRegistered = (text) => {
     const formatObj = {
-      title: state.classValue.title,
-      cost: depositType(state.registration.depositcheck),
+      title: window.classValue.title,
+      cost: depositType(window.registration.depositcheck),
     };
     let formattedText = format(text, formatObj);
     return formattedText;
@@ -18,9 +15,9 @@ export default function Registered({ ...props }) {
 
   const depositType = (type) => {
     if (type === "Deposit") {
-      return state.registration.deposit;
+      return window.registration.deposit;
     } else if (type === "Full") {
-      return state.registration.amount;
+      return window.registration.amount;
     }
   };
 
@@ -36,9 +33,13 @@ export default function Registered({ ...props }) {
           height: "100vh",
           paddingBottom: "30vh",
           paddingHorizontal: 10,
+          textAlign: "center",
         }}
       >
-        <TitleText text={processRegistered(registerTitle)} fontSize={"2rem"} />
+        <TitleText
+          text={processRegistered(registerTitle)}
+          fontSize={"1.5rem"}
+        />
         {registerText.map((text, index) => (
           <p key={index}>
             <strong>{processRegistered(text)}</strong>

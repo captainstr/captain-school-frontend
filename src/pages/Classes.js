@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../resources/styles/base.css";
 import "../resources/styles/captain.css";
 
-import { TitleText, LightBlueText, RedText } from "../components/StyledText";
+import { TitleText, LightBlueText } from "../components/StyledText";
 import { classesTitle, classesSubTitle } from "../resources/data/text.js";
 import Table from "../components/Table";
 import RegistrationModal from "../components/modals/RegistrationModal";
@@ -12,17 +12,19 @@ import Layout from "../components/Layout";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+const sortFunc = (a, b, order, dataField, rowA, rowB) => {
+  if (order === "asc") {
+    return new Date(a).getTime() - new Date(b).getTime();
+  }
+  return new Date(b).getTime() - new Date(a).getTime();
+};
+
 const columns = [
   {
     dataField: "date",
     text: "Date",
     sort: true,
-    sortFunc: (a, b, order, dataField, rowA, rowB) => {
-      if (order === "asc") {
-        return new Date(a).getTime() - new Date(b).getTime();
-      }
-      return new Date(b).getTime() - new Date(a).getTime();
-    },
+    sortFunc,
     style: { color: "#1487d4", cursor: "pointer" },
   },
   {
@@ -39,13 +41,6 @@ const columns = [
     dataField: "state",
     text: "State",
     sort: true,
-  },
-];
-
-const defaultSorted = [
-  {
-    dataField: "date",
-    order: "asc",
   },
 ];
 

@@ -24,6 +24,19 @@ import Collapsible from "react-collapsible";
 import { RedText } from "../components/StyledText";
 import { withRouter } from "react-router-dom";
 
+// TODO move to a more suitable location?
+
+const popupWindow = (url, windowName, w, h) => {
+  const y = window.top.outerHeight / 2 + window.top.screenY - h / 2;
+  const x = window.top.outerWidth / 2 + window.top.screenX - w / 2;
+  let newWindow = window.open(
+    url,
+    windowName,
+    `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${w}, height=${h}, top=${y}, left=${x}`
+  );
+  return newWindow;
+};
+
 const phoneRegExp =
   /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/;
 
@@ -88,13 +101,14 @@ function RegistrationForm({ ...props }) {
     document.querySelector("#registration-form").addEventListener(
       "braintreefinished",
       () => {
-        props.history.push({
-          pathname: "/registered",
-          state: {
-            classValue: props.classValue,
-            registration: componentValues,
-          },
-        });
+        let newWindow = popupWindow(
+          "/registered",
+          "Registration Complete",
+          800,
+          600
+        );
+        newWindow.classValue = props.classValue;
+        newWindow.registration = componentValues;
       },
       false
     );
