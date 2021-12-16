@@ -22,30 +22,25 @@ export default function Registered({ ...props }) {
   };
 
   return (
-    <Layout>
-      <div
-        id="content"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-          paddingBottom: "30vh",
-          paddingHorizontal: 10,
-          textAlign: "center",
-        }}
-      >
-        <TitleText
-          text={processRegistered(registerTitle)}
-          fontSize={"1.5rem"}
-        />
-        {registerText.map((text, index) => (
-          <p key={index}>
-            <strong>{processRegistered(text)}</strong>
-          </p>
-        ))}
-      </div>
-    </Layout>
+    <div
+      id="content"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        paddingBottom: "30vh",
+        paddingHorizontal: 10,
+        textAlign: "center",
+      }}
+    >
+      <TitleText text={processRegistered(registerTitle)} fontSize={"1.5rem"} />
+      {registerText.map((text, index) => (
+        <p key={index}>
+          <strong>{processRegistered(text)}</strong>
+        </p>
+      ))}
+    </div>
   );
 }
