@@ -243,76 +243,70 @@ function RegistrationForm({ ...props }) {
               Tuition: ${props.classValue.amount}
             </div>
             {/* HIDDEN FIELDS */}
-            <Form.Group controlId="amount">
+            <Form.Group controlId="amount" style={{ display: "none" }}>
               <Form.Control
                 name="amount"
                 value={props.classValue.amount}
-                style={{ display: "none" }}
                 readOnly={true}
               />
             </Form.Group>
-            <Form.Group controlId="deposit">
+            <Form.Group controlId="deposit" style={{ display: "none" }}>
               <Form.Control
                 name="deposit"
                 value={props.classValue.deposit}
-                style={{ display: "none" }}
                 readOnly={true}
               />
             </Form.Group>
-            <Form.Group controlId="title">
+            <Form.Group controlId="title" style={{ display: "none" }}>
               <Form.Control
                 name="title"
                 value={props.classValue.title}
-                style={{ display: "none" }}
                 readOnly={true}
               />
             </Form.Group>
-            <Form.Group controlId="title">
+            <Form.Group controlId="title" style={{ display: "none" }}>
               <Form.Control
                 name="title"
                 value={props.classValue.title}
-                style={{ display: "none" }}
                 readOnly={true}
               />
             </Form.Group>
-            <Form.Group controlId="captain">
+            <Form.Group controlId="captain" style={{ display: "none" }}>
               <Form.Control
                 name="captain"
                 value={props.classValue.captain}
-                style={{ display: "none" }}
                 readOnly={true}
               />
             </Form.Group>
-            <Form.Group controlId="class_type">
+            <Form.Group controlId="class_type" style={{ display: "none" }}>
               <Form.Control
                 name="class_type"
                 value={props.classValue.class_type}
-                style={{ display: "none" }}
                 readOnly={true}
               />
             </Form.Group>
-            <Form.Group controlId="classroom_location">
+            <Form.Group
+              controlId="classroom_location"
+              style={{ display: "none" }}
+            >
               <Form.Control
                 name="classroom_location"
                 value={props.classValue.classroom_location}
-                style={{ display: "none" }}
                 readOnly={true}
               />
             </Form.Group>
-            <Form.Group controlId="date">
+            <Form.Group controlId="date" style={{ display: "none" }}>
               <Form.Control
                 name="date"
                 value={props.classValue.date}
-                style={{ display: "none" }}
                 readOnly={true}
               />
             </Form.Group>
 
-            <Form.Group controlId="formClass">
+            <Form.Group controlId="formClass" style={{ display: "none" }}>
               <Form.Control
                 name="formClass"
                 value={props.classValue.id}
-                style={{ display: "none" }}
                 readOnly={true}
               />
             </Form.Group>
