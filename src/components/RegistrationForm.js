@@ -239,9 +239,6 @@ function RegistrationForm({ ...props }) {
                   " days from the class"}
               </strong>
             )}
-            <div style={{ color: "#7a7a7a" }}>
-              Tuition: ${props.classValue.amount}
-            </div>
             {/* HIDDEN FIELDS */}
             <Form.Group controlId="amount" style={{ display: "none" }}>
               <Form.Control
@@ -314,7 +311,7 @@ function RegistrationForm({ ...props }) {
             <Form.Group controlId="formDeposit">
               <Form.Check
                 type={"radio"}
-                label={"N/A"}
+                label={"Contact Ross at 888-598-9598 to discuss payment"}
                 name="depositcheck"
                 onChange={handleChange}
                 value="NA"
@@ -323,7 +320,7 @@ function RegistrationForm({ ...props }) {
               {dateWithinDepositRange(props.classValue) ? (
                 <Form.Check
                   type={"radio"}
-                  label={"Deposit"}
+                  label={"Deposit of $" + props.classValue.deposit}
                   name="depositcheck"
                   onChange={handleChange}
                   value="Deposit"
@@ -332,7 +329,7 @@ function RegistrationForm({ ...props }) {
               ) : null}
               <Form.Check
                 type={"radio"}
-                label={"Full"}
+                label={"Full Tuition $" + props.classValue.amount}
                 name="depositcheck"
                 onChange={handleChange}
                 value="Full"
