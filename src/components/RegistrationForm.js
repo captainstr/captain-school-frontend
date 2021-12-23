@@ -227,6 +227,12 @@ function RegistrationForm({ ...props }) {
                     <div className="error-message">{errors.authaccept}</div>
                   ) : null}
                 </Form.Group>
+                <FormPaymentRadio
+                  {...props}
+                  handleChange={handleChange}
+                  handleBlur={handleBlur}
+                  dateWithinDepositRange={dateWithinDepositRange}
+                />
                 <FormCredit
                   handleBlur={handleBlur}
                   handleChange={handleChange}
@@ -241,13 +247,6 @@ function RegistrationForm({ ...props }) {
                   " days from the class"}
               </strong>
             )}
-
-            <FormPaymentRadio
-              {...props}
-              handleChange={handleChange}
-              handleBlur={handleBlur}
-              dateWithinDepositRange={dateWithinDepositRange}
-            />
 
             <FormHiddenFields {...props} />
 
