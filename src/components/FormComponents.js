@@ -207,3 +207,107 @@ export function FormAddress({ ...props }) {
     </>
   );
 }
+
+export function FormPaymentRadio({ ...props }) {
+  return (
+    <Form.Group controlId="formDeposit">
+      <Form.Check
+        type={"radio"}
+        label={"Contact Ross at 888-598-9598 to discuss payment"}
+        name="depositcheck"
+        onChange={props.handleChange}
+        value="NA"
+        onBlur={props.handleBlur}
+      />
+      {props.dateWithinDepositRange(props.classValue) ? (
+        <Form.Check
+          type={"radio"}
+          label={"Deposit of $" + props.classValue.deposit}
+          name="depositcheck"
+          onChange={props.handleChange}
+          value="Deposit"
+          onBlur={props.handleBlur}
+        />
+      ) : null}
+      <Form.Check
+        type={"radio"}
+        label={"Full Tuition $" + props.classValue.amount}
+        name="depositcheck"
+        onChange={props.handleChange}
+        value="Full"
+        onBlur={props.handleBlur}
+      />
+    </Form.Group>
+  );
+}
+
+export function FormHiddenFields({ ...props }) {
+  return (
+    <>
+      <Form.Group controlId="amount" style={{ display: "none" }}>
+        <Form.Control
+          name="amount"
+          value={props.classValue.amount}
+          readOnly={true}
+        />
+      </Form.Group>
+      <Form.Group controlId="deposit" style={{ display: "none" }}>
+        <Form.Control
+          name="deposit"
+          value={props.classValue.deposit}
+          readOnly={true}
+        />
+      </Form.Group>
+      <Form.Group controlId="title" style={{ display: "none" }}>
+        <Form.Control
+          name="title"
+          value={props.classValue.title}
+          readOnly={true}
+        />
+      </Form.Group>
+      <Form.Group controlId="title" style={{ display: "none" }}>
+        <Form.Control
+          name="title"
+          value={props.classValue.title}
+          readOnly={true}
+        />
+      </Form.Group>
+      <Form.Group controlId="captain" style={{ display: "none" }}>
+        <Form.Control
+          name="captain"
+          value={props.classValue.captain}
+          readOnly={true}
+        />
+      </Form.Group>
+      <Form.Group controlId="class_type" style={{ display: "none" }}>
+        <Form.Control
+          name="class_type"
+          value={props.classValue.class_type}
+          readOnly={true}
+        />
+      </Form.Group>
+      <Form.Group controlId="classroom_location" style={{ display: "none" }}>
+        <Form.Control
+          name="classroom_location"
+          value={props.classValue.classroom_location}
+          readOnly={true}
+        />
+      </Form.Group>
+      <Form.Group controlId="date" style={{ display: "none" }}>
+        <Form.Control
+          name="date"
+          value={props.classValue.date}
+          readOnly={true}
+        />
+      </Form.Group>
+
+      <Form.Group controlId="formClass" style={{ display: "none" }}>
+        <Form.Control
+          name="formClass"
+          value={props.classValue.id}
+          readOnly={true}
+        />
+      </Form.Group>
+    </>
+  );
+}
