@@ -20,12 +20,11 @@ const sortFunc = (a, b, order, dataField, rowA, rowB) => {
 };
 
 const columns = [
+  
   {
-    dataField: "date",
-    text: "Date",
+    dataField: "class_type",
+    text: "Class Type",
     sort: true,
-    sortFunc,
-    style: { color: "#1487d4", cursor: "pointer" },
   },
   {
     dataField: "city",
@@ -33,10 +32,13 @@ const columns = [
     sort: true,
   },
   {
-    dataField: "class_type",
-    text: "Class Type",
+    dataField: "title",
+    text: "Date",
     sort: true,
+    sortFunc,
+    style: { color: "#1487d4", cursor: "pointer" },
   },
+  
   {
     dataField: "state",
     text: "State",
