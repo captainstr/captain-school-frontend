@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import RegistrationForm from "../RegistrationForm";
 import { RedText } from "../../components/StyledText";

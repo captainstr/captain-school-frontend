@@ -17,7 +17,7 @@ export default function Table({ ...props }) {
   return (
     <div>
       <Row className="justify-content-md-center">
-        <Col xs lg="10" className="text-center">
+        <Col xs lg="12" className="text-center">
           <BootstrapTable
             bootstrap4
             striped

@@ -81,7 +81,7 @@ export default function Classes() {
         }}
       >
         <div
-          className="px-5"
+          className="px-2"
           id="content"
           style={{
             display: "flex",
