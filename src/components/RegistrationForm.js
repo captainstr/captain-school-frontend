@@ -111,6 +111,8 @@ function RegistrationForm({ ...props }) {
         );
         newWindow.classValue = props.classValue;
         newWindow.registration = componentValues;
+        const form = document.querySelector("#registration-form");
+        form.submit();
       },
       false
     );
