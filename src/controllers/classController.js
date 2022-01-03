@@ -20,6 +20,7 @@ export async function getClasses() {
     return {
       id: item.id,
       date: formatDate(item.date),
+      datetext: formatDate(item.datetext),
       money_date: formatDate(item.money_date),
       city: item.city.city,
       class_type: item.class_type.class_type,
