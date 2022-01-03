@@ -78,16 +78,16 @@ export default function ClassModal({ ...props }) {
 
   return (
     <Modal show={true} onHide={handleClose} size="lg">
-      <Modal.Body>
-        <LightBlueText
+       <Modal.Body>
+        {/* <LightBlueText
           text={
             props.classValue.class_type +
             ".............Starting Date " +
             props.classValue.date
           }
-        />
-        <LightBlueText text={"Instructor:"} />
-        <LightBlueText text={props.classValue.captain} />
+        /> */}
+        <LightBlueText text={props.classValue.class_type}/>
+        <LightBlueText text={props.classValue.captain}/>
         <div
           style={{
             flexDirection: "row",
