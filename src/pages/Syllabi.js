@@ -26,6 +26,7 @@ import {
 import HeadBoat from "../resources/images/Head boat.jpeg";
 import BoatTowing from "../resources/images/Boat Towing.jpeg";
 import eCapLogo from "../resources/images/eCap Logo.jpeg";
+import Syllabus from "../resources/files/Syllabus OUPV.pdf";
 
 function SyllabusLink() {
   return (
@@ -33,10 +34,7 @@ function SyllabusLink() {
       <span style={{ fontSize: "16px" }}>
         <em>
           <u>
-            <a
-              href="sites/default/files/Syllabus OUPV.pdf"
-              onclick="window.open(this.href, '', 'resizable=no,status=no,location=yes,toolbar=no,menubar=no,fullscreen=no,scrollbars=no,dependent=no,width=700,left=600,height=800,top=100'); return false;"
-            >
+            <a href={Syllabus} target="_blank" rel="noreferrer">
               <strong>View course syllabus here</strong>
             </a>
           </u>
@@ -58,18 +56,6 @@ function Requirements() {
           </u>
         </em>
       </span>
-    </div>
-  );
-}
-
-function Breadcrumb({ ...props }) {
-  return (
-    <div className="breadcrumb">
-      <span className="nolink" tabindex="0">
-        Course Descriptions
-      </span>
-      <span className="breadcrumb-separator">/</span>
-      {props.text}
     </div>
   );
 }

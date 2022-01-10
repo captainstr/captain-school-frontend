@@ -53,7 +53,6 @@ class SimpleMap extends Component {
     if (this.state.latlng === null) {
       return <div />;
     }
-    console.log(this.state.latlng);
     return (
       <div style={{ height: 200, width: 200 }}>
         <GoogleMapReact
@@ -78,7 +77,7 @@ export default function ClassModal({ ...props }) {
 
   return (
     <Modal show={true} onHide={handleClose} size="lg">
-       <Modal.Body>
+      <Modal.Body>
         {/* <LightBlueText
           text={
             props.classValue.class_type +
@@ -86,8 +85,8 @@ export default function ClassModal({ ...props }) {
             props.classValue.date
           }
         /> */}
-        <LightBlueText text={props.classValue.class_type}/>
-        <LightBlueText text={props.classValue.captain}/>
+        <LightBlueText text={props.classValue.class_type} />
+        <LightBlueText text={props.classValue.captain} />
         <div
           style={{
             flexDirection: "row",
