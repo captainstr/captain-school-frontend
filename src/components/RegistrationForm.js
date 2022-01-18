@@ -229,17 +229,18 @@ function RegistrationForm({ ...props }) {
                     <div className="error-message">{errors.authaccept}</div>
                   ) : null}
                 </Form.Group>
-                <FormPaymentRadio
-                  {...props}
-                  handleChange={handleChange}
-                  handleBlur={handleBlur}
-                  dateWithinDepositRange={dateWithinDepositRange}
-                />
-                <FormCredit
-                  handleBlur={handleBlur}
-                  handleChange={handleChange}
-                />
               </>
+            ) : null}
+
+            <FormPaymentRadio
+              {...props}
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              dateWithinDepositRange={dateWithinDepositRange}
+            />
+
+            {values.depositcheck !== "NA" ? (
+              <FormCredit handleBlur={handleBlur} handleChange={handleChange} />
             ) : null}
 
             {dateWithinDepositRange(props.classValue) ? null : (

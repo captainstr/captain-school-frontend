@@ -145,7 +145,8 @@ function getValues() {
   const zip = document.querySelector("#formZip").value;
   //const address = addressFormatter(address1, address2, city, state, zip);
   const classValue = document.querySelector("#formClass").value;
-  const depositcheck = document.querySelector("#formDeposit").value;
+  // TODO kind of a hack, is there a better way to do this?
+  const depositcheck = document.querySelector("#formDepositTrue").value;
   const amount = document.querySelector("#amount").value;
   const deposit = document.querySelector("#deposit").value;
   const title = document.querySelector("#title").value;

@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { states } from "../resources/data/constants";
 import { RedText } from "../components/StyledText";
+import React, { useState } from "react";
 
 export const CONTAINER = styled.div`
   height: auto;
@@ -209,35 +210,47 @@ export function FormAddress({ ...props }) {
 }
 
 export function FormPaymentRadio({ ...props }) {
+  const [stored, setStored] = useState("");
+
+  const onHandleHandle = (event, value) => {
+    props.handleChange(event);
+    setStored(value);
+  };
+
   return (
-    <Form.Group controlId="formDeposit">
-      <Form.Check
-        type={"radio"}
-        label={"Contact Ross at 888-598-9598 to discuss payment"}
-        name="depositcheck"
-        onChange={props.handleChange}
-        value="NA"
-        onBlur={props.handleBlur}
-      />
-      {props.dateWithinDepositRange(props.classValue) ? (
+    <>
+      <Form.Group controlId="formDeposit">
         <Form.Check
           type={"radio"}
-          label={"Deposit of $" + props.classValue.deposit}
+          label={"Contact Ross at 888-598-9598 to discuss payment"}
           name="depositcheck"
-          onChange={props.handleChange}
-          value="Deposit"
+          onChange={(event) => onHandleHandle(event, "NA")}
+          value="NA"
           onBlur={props.handleBlur}
         />
-      ) : null}
-      <Form.Check
-        type={"radio"}
-        label={"Full Tuition $" + props.classValue.amount}
-        name="depositcheck"
-        onChange={props.handleChange}
-        value="Full"
-        onBlur={props.handleBlur}
-      />
-    </Form.Group>
+        {props.dateWithinDepositRange(props.classValue) ? (
+          <Form.Check
+            type={"radio"}
+            label={"Deposit of $" + props.classValue.deposit}
+            name="depositcheck"
+            onChange={(event) => onHandleHandle(event, "Deposit")}
+            value="Deposit"
+            onBlur={props.handleBlur}
+          />
+        ) : null}
+        <Form.Check
+          type={"radio"}
+          label={"Full Tuition $" + props.classValue.amount}
+          name="depositcheck"
+          onChange={(event) => onHandleHandle(event, "Full")}
+          value="Full"
+          onBlur={props.handleBlur}
+        />
+      </Form.Group>
+      <Form.Group controlId="formDepositTrue" style={{ display: "none" }}>
+        <Form.Control name="formdeposit" value={stored} readOnly={true} />
+      </Form.Group>
+    </>
   );
 }
 
