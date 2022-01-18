@@ -143,7 +143,7 @@ function getValues() {
   const city = document.querySelector("#formCity").value;
   const state = document.querySelector("#formState").value;
   const zip = document.querySelector("#formZip").value;
-  const address = addressFormatter(address1, address2, city, state, zip);
+  //const address = addressFormatter(address1, address2, city, state, zip);
   const classValue = document.querySelector("#formClass").value;
   const depositcheck = document.querySelector("#formDeposit").value;
   const amount = document.querySelector("#amount").value;
@@ -160,7 +160,11 @@ function getValues() {
     firstname,
     lastname,
     phone_number,
-    address,
+    address1,
+    address2,
+    city,
+    state,
+    zip,
     class: classValue,
     depositcheck,
     amount,
