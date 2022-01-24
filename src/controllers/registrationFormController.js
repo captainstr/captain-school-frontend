@@ -109,9 +109,6 @@ async function brainTreeCreateHostedFields(clientErr, clientInstance) {
 
             // Hack because we need to trigger the React component from inside the Braintree form override.
             // Ideally we replace this eventually, if we can find Braintree/React integration that works well
-            //event = document.createEvent("HTMLEvents");
-            //event.initEvent("braintreefinished", true, true);
-            //event.eventName = "braintreefinished";
             form.dispatchEvent(new Event("braintreefinished"));
           });
         },
