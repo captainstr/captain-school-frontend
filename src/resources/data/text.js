@@ -196,6 +196,11 @@ export const registerText = [
   "Please check your email for registration confirmation and course details.",
   "If you do not receive an email confirmation in one day, please contact Ross at Ross@captainsschool.com or (910) 547-3689",
 ];
+export const registerUnpaidText = [
+  "You have elected to make tuition arrangements for {title} without using a credit card.",
+  "Please Contact Capt. Ross @ 910-547-3689 for payment information",
+  "Be advised that registration is not confirmed until payment have been made.",
+];
 
 // Downloads
 

@@ -158,6 +158,8 @@ function RegistrationForm({ ...props }) {
             );
             saveRegistrations(values);
             sendNAEmail(values);
+            const form = document.querySelector("#registration-form");
+            form.dispatchEvent(new Event("braintreefinished"));
           }
           // When button submits form and form is in the process of submitting, submit button is disabled
           setSubmitting(true);
